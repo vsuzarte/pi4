@@ -1,0 +1,20 @@
+.container.gallery-container {
+    background-color: black;
+    color: white;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+@media(max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    .container.gallery-container {
+        border-radius: 0;
+    }
+}
