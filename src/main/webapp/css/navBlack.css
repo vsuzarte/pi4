@@ -1,0 +1,223 @@
+/*Nav Bar*/
+
+.navbar{
+	background: black;
+	border-bottom: 1px solid white;
+}
+
+#logo{
+	width: 40px;
+	height: 40px;
+}
+
+.dropdown-menu{
+	background: black;
+}
+
+.dropdown-item{
+	color: #f8f9fa;
+	margin-left: 1px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: #f8f9fa;
+}
+
+.btn-outline-secondary {
+	color: #f8f9fa;
+	background-color: transparent;
+	background-image: none;
+	border-color: #f8f9fa;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+	background: white;
+	color: black;
+	transition: all .7s ease;
+}
+
+.nav-link{
+	text-decoration: none;
+	color: white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: #fff;
+	background-color: black;
+
+}
+
+	.navbar-text{
+		margin-left: .4rem;
+	}
+
+.navbar-nav{
+	margin-right: 1px;
+}
+
+/* Botões */
+
+.btn:not(:disabled):not(.disabled):hover{
+	background: white;
+	color: black;
+	transition: all .7s ease;
+}
+
+
+.but-compra{
+	color: white;
+	background: #333;
+	border-color: white;
+}
+
+.but-compra:hover{
+	color: white;
+	background: transparent;
+	border-color: black;
+	transition: all .7s ease;
+}
+
+@media (max-width: 575.98px) {
+
+
+	.form-control{
+		width: 50%;
+		height: 50%;
+		margin-right: .2rem;
+	}
+
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+
+	.actions .btn-info{
+		float:left;
+	}
+
+	.actions .btn-danger{
+		float:right;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.form-control{
+		width: 50%;
+		height: 50%;
+		margin-right: .2rem;
+	}
+
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+
+	.actions .btn-info{
+		float:left;
+	}
+
+	.actions .btn-danger{
+		float:right;
+	}
+
+}
+
+/* Medium devices (tablets, 768px and up*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+		.nomargin{
+		margin-left: 3rem;
+	}
+
+	.desc-car{
+		margin-left: 3rem;
+	}
+
+	.form-inline{
+		margin-right: .2rem;
+	}
+
+	.form-control{
+		margin-right: 1rem;
+	}
+
+
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+
+	.navbar-nav{
+		font-size: 10px;
+	}
+
+	.btn .btn-sm .btn-outline-secondary{
+		font-size: 10px;
+	}
+
+	.dropdown-menu{
+		margin-top: .10rem;
+		font-size: 10px;
+	}
+
+	.navbar-brand{
+		margin-right: 1rem;
+		font-size: 10px;
+	}
+
+	.form-inline{
+		margin-right: 5rem;
+		font-size: 10px;
+	}
+
+
+	.form-control{
+		margin-left: .8rem;
+		margin-right: .2rem;
+		font-size: 10px;
+		height: .2rem;
+	}
+
+	#logo{
+		width: 10px;
+		height: 10px;
+	}
+
+	.registro{
+		margin-left: 8rem;
+	}
+
+	/* Botões */
+
+	.btn:not(:disabled):not(.disabled){
+		font-size: 10px;
+	}
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+	.dropdown-menu{
+		margin-top: .10rem;
+	}
+
+	.navbar-brand{
+		margin-right: 1rem;
+	}
+
+	.form-inline{
+		margin-right: 5rem;
+	}
+
+
+	.form-control{
+		margin-left: .8rem;
+		margin-right: .2rem;
+	}
+
+}
