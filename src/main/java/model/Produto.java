@@ -7,8 +7,6 @@ package model;
 
 import java.sql.Date;
 
-
-
 /**
  *
  * @author guilherme.gcosta6
@@ -25,8 +23,9 @@ public class Produto {
     private String c4;
     private String c5;
     private String c6;
+    private String categoria;
 
-    public Produto(Integer idProduto, String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6) {
+    public Produto(Integer idProduto, String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6, String categoria) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
@@ -37,9 +36,10 @@ public class Produto {
         this.c4 = c4;
         this.c5 = c5;
         this.c6 = c6;
+        this.categoria = categoria;
     }
 
-    public Produto(String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6) {
+    public Produto(String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6, String categoria) {
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
         this.valorProduto = valorProduto;
@@ -49,6 +49,16 @@ public class Produto {
         this.c4 = c4;
         this.c5 = c5;
         this.c6 = c6;
+        this.categoria = categoria;
+
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public Integer getIdProduto() {
@@ -130,9 +140,5 @@ public class Produto {
     public void setC6(String c6) {
         this.c6 = c6;
     }
-
-   
-
-  
 
 }
