@@ -45,7 +45,7 @@ public class AdicionarProduto extends HttpServlet {
         try {
           
             Produto produto = ProdutoDAO.procurarProdutoPorNome(request.getParameter("produto"));
-            ItemVenda item = new ItemVenda(1, produto.getDescricao(), produto.getNomeProduto(),produto.getValorProduto(),0);
+            ItemVenda item = new ItemVenda(1, produto.getDescricao(), produto.getNomeProduto(),produto.getValorProduto(),0,produto.getImg());
       
             
             if (sessao.getAttribute("carrinho") == null){

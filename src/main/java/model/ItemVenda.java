@@ -18,17 +18,27 @@ public class ItemVenda {
     private String nome;
     private double preco;
     private double valor;
+    private String img;
 
-    public ItemVenda(int qtde, String descricao, String nome, double preco, double valor) {
+    public ItemVenda(int qtde, String descricao, String nome, double preco, double valor, String img) {
         this.qtde = qtde;
         this.descricao = descricao;
         this.nome = nome;
         this.preco = preco;
         this.valor = valor;
+        this.img = img;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
    
- 
+    
 
     public String getDescricao() {
         return descricao;
