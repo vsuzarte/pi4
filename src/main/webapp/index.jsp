@@ -52,7 +52,7 @@
               </li>
             </ul>
             <form class="form-inline">
-              <input class="form-control" type="search" name ="nome" placeholder="Buscar no site" aria-label="Search">
+              <input class="form-control" type="search" name ="nome" placeholder="Buscar no site." aria-label="Search">
               <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
             </form>
             <div class="registro">
