@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import model.ItemVenda;
 import dao.ProdutoDAO;
 import model.Produto;
 import java.io.IOException;
@@ -38,13 +39,13 @@ public class RemoverProdutoCarrinho extends HttpServlet {
           
             Produto produto = ProdutoDAO.procurarProdutoPorNome(request.getParameter("produto"));
    
-            List<Produto> carrinho = (List<Produto>) sessao.getAttribute("carrinho");
+            List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
             
             
             
             for(int i = 0; i < carrinho.size(); i++){
                 String nome1= produto.getNomeProduto();
-                String nome2 = carrinho.get(i).getNomeProduto();
+                String nome2 = carrinho.get(i).getNome();
                 if( nome1.equals(nome2)){
                     carrinho.remove(i);
                     break;
