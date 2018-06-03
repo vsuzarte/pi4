@@ -120,10 +120,12 @@ public class ProdutoDAO {
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
                 String img = result.getString("img");
+                
 
 
                 Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
-
+                produto.setIdProduto(idProduto);
+                
                 listaProdutos.add(produto);
                 
                 
@@ -235,6 +237,7 @@ public class ProdutoDAO {
 
                 Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
 
+                produto.setIdProduto(idProduto);
                 listaProdutos.add(produto);
             }
 
@@ -463,7 +466,7 @@ public class ProdutoDAO {
                 String img = result.getString("img");
 
                produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
-
+produto.setIdProduto(idProduto);
                 return produto;
               
             }

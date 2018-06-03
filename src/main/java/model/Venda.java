@@ -16,6 +16,11 @@ public class Venda {
     private int idCliente;
     private double valor;
     private float total;
+
+    public Venda(int idCliente, double valor) {
+        this.idCliente = idCliente;
+        this.valor = valor;
+    }
     
     
 

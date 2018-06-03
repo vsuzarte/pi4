@@ -57,13 +57,12 @@ public class ClienteDAO {
             stmt.setString(9, cliente.getNumCasa());
 
             stmt.setString(10, cliente.getRuaCliente());
-            
+
             stmt.setString(11, cliente.getSenhaCliente());
-            
+
             stmt.setString(12, cliente.getTelefoneCliente());
 
             stmt.setBoolean(13, true);
-
 
             stmt.execute();
 
@@ -80,6 +79,97 @@ public class ClienteDAO {
 
         }
 
+    }
+
+    public static Cliente procurarUsername(String email) throws SQLException, Exception {
+        String sql = "SELECT * FROM Cliente WHERE emailCliente = (?) AND Disponivel = true ";
+        //connection para abertura e fechamento.
+        Connection connection = null;
+
+        //PreparedStatement para os comandos SQL e fechamento do mesmo.
+        PreparedStatement preparedStatement = null;
+
+        //Armazenará os resultados do banco de dados
+        ResultSet result = null;
+
+        try {
+
+            //chama a classe criada ConnectionUtils.
+            //abre a conexão com o banco de dados.
+            connection = ConnectionUtils.getConnection();
+
+            //cria um statement para execução de instruções SQL.
+            preparedStatement = connection.prepareStatement(sql);
+
+            //Configura os parâmetros do PreparedSatamente.
+            preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, email);
+
+            //Executa a consulta SQL no banco de dados
+            result = preparedStatement.executeQuery();
+
+            if (result.next()) {
+
+                Cliente cliente = new Cliente();
+
+                String nomeCliente = result.getString("nomeCliente");
+                String emailCliente = result.getString("emailCliente");
+                String telefoneCliente = result.getString("telefoneCliente");
+                String senhaCliente = result.getString("senhaCliente");
+                String cepCliente = result.getString("cepCliente");
+                String estadoCliente = result.getString("estadoCliente");
+                String cidadeCliente = result.getString("cidadeCliente");
+                String ruaCliente = result.getString("ruaCliente");
+                String numCasa = result.getString("numCasa");
+                String complemento = result.getString("complemento");
+                String bairro = result.getString("bairro");
+                String nomeContato = result.getString("nomeContato");
+                int idCliente = result.getInt("idCliente");
+              
+                cliente.setBairro(bairro);
+                cliente.setCepCliente(cepCliente);
+                cliente.setCidadeCliente(cidadeCliente);
+                cliente.setComplemento(complemento);
+                cliente.setEmailCliente(emailCliente);
+                cliente.setEstadoCliente(estadoCliente);
+                cliente.setNomeCliente(nomeCliente);
+                cliente.setNomeContato(nomeContato);
+                cliente.setNumCasa(numCasa);
+                cliente.setRuaCliente(ruaCliente);
+                cliente.setSenhaCliente(senhaCliente);
+                cliente.setTelefoneCliente(telefoneCliente);
+                cliente.setIdCliente(idCliente);
+                
+                
+             
+
+                return cliente;
+
+            }
+
+        } catch (Exception E) {
+            E.printStackTrace();
+        } finally {
+
+            //Se o result ainda estiver aberto, realiza seu fechamento
+            if (result != null && !result.isClosed()) {
+                result.close();
+            }
+
+            //Se o statement ainda estiver aberto, realiza seu fechamento
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            //Se a conexão ainda estiver aberta, realiza seu fechamento
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+
+        }
+
+        return null;
     }
 
 }

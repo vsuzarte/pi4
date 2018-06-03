@@ -59,6 +59,9 @@ public class Cliente {
         this.telefoneCliente = telefoneCliente;
     }
 
+    public Cliente() {
+    }
+
     public Integer getIdCliente() {
         return idCliente;
     }

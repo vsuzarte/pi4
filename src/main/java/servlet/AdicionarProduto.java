@@ -26,10 +26,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "AdicionarProduto", urlPatterns = {"/add-produto-carrinho"})
 public class AdicionarProduto extends HttpServlet {
-
     
-
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -43,25 +40,23 @@ public class AdicionarProduto extends HttpServlet {
 //        }
 
         try {
-          
-            Produto produto = ProdutoDAO.procurarProdutoPorNome(request.getParameter("produto"));
-            ItemVenda item = new ItemVenda(1, produto.getDescricao(), produto.getNomeProduto(),produto.getValorProduto(),0,produto.getImg());
-      
             
-            if (sessao.getAttribute("carrinho") == null){
+            Produto produto = ProdutoDAO.procurarProdutoPorNome(request.getParameter("produto"));
+            ItemVenda item = new ItemVenda(1, produto.getDescricao(), produto.getNomeProduto(), produto.getValorProduto(), 0, produto.getImg());
+            item.setIdProduto(produto.getIdProduto());
+            
+            if (sessao.getAttribute("carrinho") == null) {
                 List<ItemVenda> carrinho = new ArrayList();
                 carrinho.add(item);
                 sessao.setAttribute("carrinho", carrinho);
-            }else{
-
-            List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
-            
-            carrinho.add(item);
-            
-            sessao.setAttribute("carrinho", carrinho);
+            } else {
+                
+                List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
+                
+                carrinho.add(item);
+                
+                sessao.setAttribute("carrinho", carrinho);
             }
-           
-            
             
             response.sendRedirect(request.getContextPath() + "/index.jsp");
 
@@ -70,13 +65,12 @@ public class AdicionarProduto extends HttpServlet {
         } catch (Exception e) {
 //             response.sendRedirect(request.getContextPath() + "/index.jsp");
             
-            
         }
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
-
+    
 }

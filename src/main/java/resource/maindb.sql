@@ -34,7 +34,7 @@
         estadoCliente VARCHAR(50),
         cidadeCliente VARCHAR(50),
         ruaCliente VARCHAR(50),
-        numCasa INT NOT NULL,
+        numCasa VARCHAR(50),
         complemento VARCHAR(50),
         bairro VARCHAR(50),
         nomeContato VARCHAR(50),

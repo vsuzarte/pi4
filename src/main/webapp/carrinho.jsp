@@ -123,7 +123,7 @@
         <td><a href="#" class="btn but-compra"><i class="fa fa-angle-left"></i> Continuar Comprando</a></td>
         <td colspan="2" class="hidden-xs"></td>
         <td class="hidden-xs text-center"><strong>Total R$ ${totalCarrinho}</strong></td>
-        <td><a href="#" class="btn btn-block but-compra">Finalizar <i class="fa fa-angle-right"></i></a></td>
+        <td><a href="finalizar-venda" class="btn btn-block but-compra">Finalizar <i class="fa fa-angle-right"></i></a></td>
       </tr>
     </tfoot>
   </table>
