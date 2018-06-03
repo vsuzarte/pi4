@@ -55,7 +55,7 @@ public class ProdutoDAO {
 
             stmt.setDouble(9, produto.getValorProduto());
 
-            stmt.setString(9, produto.getCategoria());
+            stmt.setString(10, produto.getCategoria());
             
             stmt.setBoolean(11, true);
 
@@ -122,7 +122,10 @@ public class ProdutoDAO {
                 Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria);
 
                 listaProdutos.add(produto);
+                
+                
             }
+            
 
         } finally {
 
@@ -397,4 +400,83 @@ public class ProdutoDAO {
 
     }
 
+     public static Produto procurarProdutoPorNome(String nome) throws SQLException, Exception {
+
+        String sql = "SELECT * FROM produto WHERE (nomeProduto)=? AND DISPONIVEL=?";
+        //Lista de clientes de resultado
+        List<Produto> listaProdutos = null;
+        Produto produto = null;
+
+        //connection para abertura e fechamento.
+        Connection connection = null;
+
+        //PreparedStatement para os comandos SQL e fechamento do mesmo.
+        PreparedStatement preparedStatement = null;
+
+        //Armazenará os resultados do banco de dados
+        ResultSet result = null;
+
+        try {
+
+            //chama a classe criada ConnectionUtils.
+            //abre a conexão com o banco de dados.
+            connection = ConnectionUtils.getConnection();
+
+            //cria um statement para execução de instruções SQL.
+            preparedStatement = connection.prepareStatement(sql);
+
+            //Configura os parâmetros do PreparedSatamente.
+            //cada preparedStatement ira ocupar a interrogação na instrução SQL.
+            preparedStatement.setString(1, nome);
+            preparedStatement.setBoolean(2, true);
+
+            //Executa a consulta SQL no banco de dados
+            result = preparedStatement.executeQuery();
+
+            //While passa por cada item (linha) do resultado
+            while (result.next()) {
+
+                //Se a lista não foi inicializada, a inicializa
+                if (listaProdutos == null) {
+                    listaProdutos = new ArrayList<Produto>();
+                }
+
+                
+                int idProduto = result.getInt("idProduto");
+                String nomeProduto = result.getString("nomeProduto");
+                String descricao = result.getString("descricao");
+                String c1 = result.getString("c1");
+                String c2 = result.getString("c2");
+                String c3 = result.getString("c3");
+                String c4 = result.getString("c4");
+                String c5 = result.getString("c5");
+                String c6 = result.getString("c6");
+                String categoria = result.getString("categoria");
+                double valorProduto = result.getDouble("valorProduto");
+
+
+               produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria);
+
+                return produto;
+              
+            }
+
+        } finally {
+
+            if (result != null && !result.isClosed()) {
+                result.close();
+            }
+
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+
+        }
+
+        return produto;
+    }
 }
