@@ -74,3 +74,7 @@
 INSERT INTO USUARIO(NOMEUSUARIO,FUNCAO,USERNAME,SENHA,DISPONIVEL) VALUES ('ADMIN','gerente','ADMIN','ADMIN',TRUE);
 
 
+INSERT INTO CLIENTE(nomeCliente,emailCliente,senhaCliente,cepCliente,estadoCliente,ruaCliente,numCasa,complemento,bairro,nomeContato,telefoneCliente,disponivel) VALUES ('biel', 'biel@biel','123','0677105','bra','bra',12,'123','haha','ha','454545',TRUE);
+ 
+
+
