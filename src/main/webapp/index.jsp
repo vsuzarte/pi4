@@ -3,7 +3,7 @@
     Created on : 02/06/2018, 17:39:14
     Author     : vitor
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
   <!DOCTYPE html>
   <html ng-app="ofertas" ng-controller="ofControl">
@@ -52,7 +52,7 @@
               </li>
             </ul>
             <form class="form-inline">
-              <input class="form-control" type="search" placeholder="Buscar no site" aria-label="Search">
+              <input class="form-control" type="search" name ="nome" placeholder="Buscar no site" aria-label="Search">
               <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
             </form>
             <div class="registro">
@@ -138,18 +138,20 @@
         </diV>
 
         <div   class="row">
-          <div ng-repeat = "p in ofertas" class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-3"> <!-- INICIO DO PRODUTOS -->
+            
+            <c:forEach items="${listaProduto}" var="produto">
+          <div> <!-- INICIO DO PRODUTOS -->
 
             <div class="mycard text-center">
               <figure>
-                <img src= {{p.img}} style="width: 130px; height: 130px" alt= {{p.nome}}>
+               
                 <div>
-                  <h3>{{p.marca}}</h3>
-                  <h3>{{p.nome}}</h3>
+                  <h3><c:out value="${produto.nomeProduto}"/></h3>
+                  <h3><c:out value="${produto.categoria}"/></h3>
 
 
                   <div class="mycardFooter">
-                    <b>R$ {{p.valor}}</b>
+                    <b>R$ <c:out value="${produto.valorProduto}"/></b>
                   </div>
                 </div>
 
@@ -159,6 +161,8 @@
             <button type="button" class="btn btn-sm mb-1 but-compra">Comprar</button>
 
           </div>
+              
+          </c:forEach>
 
         </div> <!-- FIM DO PRODUTOS -->
 
