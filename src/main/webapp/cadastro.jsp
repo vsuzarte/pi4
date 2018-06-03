@@ -47,58 +47,59 @@
         
         <div class="col-md-8 order-md-1 bg-razer pt-2 pb-4">
           <h4 class="mb-3">Cadastrar Produto</h4>
-          <form>
+          <form action="${pageContext.request.contextPath}/cadastro-usuario" method="post">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="zip">Nome*</label>
-                <input type="text" class="form-control" id="nome" placeholder="NOME" required>
+                <input type="text" class="form-control" id="nome" name = "nomeProduto" placeholder="NOME" required>
               </div>
               <div class="col-md-6 mb-3">
                  <label for="desc">Descrição*</label>
-                <input type="text" class="form-control" id="desc" placeholder="Descrição" required>
+                <input type="text" class="form-control" id="desc" name = "descricao" placeholder="Descrição" required>
               </div>
             </div>
 
            <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="valor">Valor</label>
-                <input type="number" class="form-control" id="valor" placeholder="Valor"required>
+                <input type="number" class="form-control" id="valor" name = "valorProduto" placeholder="Valor"required>
               </div>
               <div class="col-md-6 mb-3">
-                 
+                 <label for="categoria">Valor</label>
+                <input type="text" class="form-control" id="categoria" name = "categoria" placeholder="Categoria"required>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="desc1">Desc1*</label>
-                <input type="text" class="form-control" id="desc1" placeholder="Desc1" required>
+                <input type="text" class="form-control" id="desc1" name = "c1" placeholder="Desc1" required>
               </div>
               <div class="col-md-6 mb-3">
                  <label for="desc2">Desc2*</label>
-                <input type="text" class="form-control" id="desc2" placeholder="desc2" required>
+                <input type="text" class="form-control" id="desc2" name = "c2" placeholder="desc2" required>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="nome">Desc3*</label>
-                <input type="text" class="form-control" id="desc3" placeholder="Desc3" required>
+                <input type="text" class="form-control" id="desc3" name = "c3" placeholder="Desc3" required>
               </div>
               <div class="col-md-6 mb-3">
                  <label for="desc4">Desc4*</label>
-                <input type="text" class="form-control" id="desc4" placeholder="Desc4" required>
+                <input type="text" class="form-control" id="desc4" name = "c4" placeholder="Desc4" required>
               </div>
             </div>
               
                <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="desc5">Desc5*</label>
-                <input type="text" class="form-control" id="desc5" placeholder="Desc5" required>
+                <input type="text" class="form-control" id="desc5" name = "c5" placeholder="Desc5" required>
               </div>
               <div class="col-md-6 mb-3">
                  <label for="desc6">Desc6*</label>
-                <input type="text" class="form-control" id="desc6" placeholder="Desc6" required>
+                <input type="text" class="form-control" id="desc6" name = "c6" placeholder="Desc6" required>
               </div>
             </div>
 
