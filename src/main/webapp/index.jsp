@@ -140,7 +140,7 @@
         <div   class="row">
             
             <c:forEach items="${listaProduto}" var="produto">
-          <div> <!-- INICIO DO PRODUTOS -->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-3"> <!-- INICIO DO PRODUTOS -->
 
             <div class="mycard text-center">
               <figure>
@@ -162,10 +162,10 @@
 
           </div>
               
-          </c:forEach>
+        
 
         </div> <!-- FIM DO PRODUTOS -->
-
+  </c:forEach>
 
     </div>
   </div>
