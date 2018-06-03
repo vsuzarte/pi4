@@ -47,7 +47,7 @@
         
         <div class="col-md-8 order-md-1 bg-razer pt-2 pb-4">
           <h4 class="mb-3">Cadastrar Produto</h4>
-          <form action="${pageContext.request.contextPath}/cadastro-usuario" method="post">
+          <form action="${pageContext.request.contextPath}/cadastro-produto" method="post">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="zip">Nome*</label>

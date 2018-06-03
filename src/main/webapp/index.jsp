@@ -5,10 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>LOJA</title>
+  <!DOCTYPE html>
+  <html ng-app="ofertas" ng-controller="ofControl">
+
+  <head>
+    <title>LOJA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,10 +17,12 @@
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" type="text/css" href="css/navBlack.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    </head>
-    <body>
-        
-        <div class="container-fluid"> <!-- INICIO CONTAINER HEADER -->
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid"> <!-- INICIO CONTAINER HEADER -->
       <div class="row">
         <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <nav class="navbar navbar-expand-lg navbar-dark">
@@ -266,6 +269,8 @@
 
   <script src="js/ofertas.js" type="text/javascript"></script>
 
-        
-    </body>
-</html>
+
+  </body>
+
+  </html>
+

@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "Naga Trinity",
+    "valor": 600.00,
+    "marca": "Razer",
+    "desc": "O premiado Naga Epic agora na versão Chroma, com 19 botões programáveis otimizados para MMO, iluminação com 16,8 milhões de opções personalizáveis de cor.",
+    "ept": "Sensor a laser 4G de 8.200 DPI capaz de reconhecer a movimentação do mouse em velocidade de até 200 polegadas por segundo e aceleração máxima de 50G. Além disso, pode ser utilizado em modo wireless ou com cabo trançado de mais de dois metros e tecnologia de conexão Ultrapolling de 1000 Hz.",
+    "img": "img/produtos/mouse/naga/naga1.png"
+  },
+  {
+      "nome": "Mamba",
+      "valor": 400.00,
+      "marca": "Razer",
+      "desc": "O sensor de mouse para jogos mais preciso do mundo, com 16.000 dpi.",
+      "ept": "Equipado com o sensor de 16.000 DPI para jogos mais preciso do mundo, o Razer Mamba proporciona precisão incomparável, dando a você uma vantagem ainda maior sobre seus adversários.",
+      "img": "img/produtos/mouse/mamba/mamba1.png"
+  },
+  {
+      "nome": "DeathAdder Elite",
+      "valor": 350.00,
+      "marca": "Razer",
+      "desc": "O Sensor Óptico mais Avançado do Mundo - Equipado com um novo sensor óptico que oferece resolução real de 16.000 DPI e rastreamento real a 450 polegadas por segundo (PPS), ideais para eSports.",
+      "ept": "Razer DeathAdder Elite dá a você a vantagem absoluta de possuir o sensor mais veloz do mundo. Projetado para redefinir os padrões de precisão e velocidade, esse sensor incrível estraçalha a concorrência com uma precisão de resolução de 99,4%, para que você possa desferir mais golpes mortais com exatidão cirúrgica. Switches Mecânicos de Mouse Razer, Otimizados para Jogos. Formato Ergonômico Aperfeiçoado para Atletas de eSports.",
+      "img": "img/produtos/mouse/adder/adder1.png"
+  },
+  {
+      "nome": "Ouroboros",
+      "valor": 1052.90,
+      "marca": "Razer",
+      "desc": "O Razer Abyssus é o mouse mais básico lançado recentemente pela razer, sem muitos botões, porém Com Um Excelente Custo Benefício.",
+      "ept": "Ele conta com um sensor de última Geração, O 3g com 1800 Dpi (o mesmo sensor usado pelo deathadder), botões sensíveis com resposta táctil E Um Design Ergonômico E Ambidestro. Com Essas Características O Mouse Proporciona Ao Jogador Um Desempenho Fora De Série Com Qualidade E Conforto. Sensor 60 - 120 Inches E 60 De Aceleração , Isso Significa Que Por Mais Que Você Mexa O Mouse Rápido , O Sensor Fará A Leitura E Executará O Comando Precisamente. Sensor Com 1800 Dpi O Mouse Conta Com Sensor 3g De 1800 Dpi , Toda Essa Tecnologia Lhe Proporciona Maior Precisão Nos Movimentos E Um Maior Ajuste De Nível De Dpi Para Os Jogos",
+      "img": "img/produtos/mouse/ourobo/ourobo1.png"
+  },
+  {
+      "nome": "Elektra V2 7.1",
+      "valor": 545.40,
+      "marca": "Razer",
+      "desc": "Headphone Gamer Razer Elektra V2 7.1 Virtual - USB.",
+      "img": "img/produtos/headset/razer/elektra/elektra1.png"
+  },
+
+  {     
+      "nome": "Cynosa",
+      "valor": 347.00,
+      "marca": "Razer",
+      "desc": "O teclado Cynosa é sem sombra de dúvidas o melhor custo-benefício da Razer. O Razer Cynosa conta com uma membrana onde a ativação acontece de forma parecida com o que acontece com os teclados mecânicos Razer. Tecnicamente, o Razer Cynosa possui teclas reforçadas e silenciosas, proporcionando um melhor desempenho do jogador. Além disso, no Razer Cynosa você pode programar macros em tempo real ou gravá-los por meio do software Razer Synapse, além de contar com um design arrojado, marca registrada dos produtos Razer. Para você que quer um teclado otimizado, com o selo Razer de qualidade e com baixo custo, o Cynosa é com certeza a sua melhor opção!",
+      "ept": "Ele conta com um sensor de última Geração, O 3g com 1800 Dpi (o mesmo sensor usado pelo deathadder), botões sensíveis com resposta táctil E Um Design Ergonômico E Ambidestro. Com Essas Características O Mouse Proporciona Ao Jogador Um Desempenho Fora De Série Com Qualidade E Conforto. Sensor 60 - 120 Inches E 60 De Aceleração , Isso Significa Que Por Mais Que Você Mexa O Mouse Rápido , O Sensor Fará A Leitura E Executará O Comando Precisamente. Sensor Com 1800 Dpi O Mouse Conta Com Sensor 3g De 1800 Dpi , Toda Essa Tecnologia Lhe Proporciona Maior Precisão Nos Movimentos E Um Maior Ajuste De Nível De Dpi Para Os Jogos",
+      "img": "img/produtos/teclados/cynosa/cynosa1.png"
+  }
+]
