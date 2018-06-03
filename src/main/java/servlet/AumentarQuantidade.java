@@ -24,8 +24,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Vitor
  */
-@WebServlet(name = "AdicionarProduto", urlPatterns = {"/add-produto-carrinho"})
-public class AdicionarProduto extends HttpServlet {
+@WebServlet(name = "AumentarQuantidade", urlPatterns = {"/aumentar-quantidade"})
+public class AumentarQuantidade extends HttpServlet {
 
     
 
@@ -34,36 +34,33 @@ public class AdicionarProduto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
-//        if (sessao == null || sessao.getAttribute("usuario") == null) {
-//            request.setAttribute("mensagemErro", "Você precisa logar ! ");
-//            RequestDispatcher dispatcher
-//                    = request.getRequestDispatcher("/index.jsp");
-//            dispatcher.forward(request, response);
-//
-//        }
 
         try {
           
             Produto produto = ProdutoDAO.procurarProdutoPorNome(request.getParameter("produto"));
-            ItemVenda item = new ItemVenda(1, produto.getDescricao(), produto.getNomeProduto(),produto.getValorProduto(),0);
-      
-            
-            if (sessao.getAttribute("carrinho") == null){
-                List<ItemVenda> carrinho = new ArrayList();
-                carrinho.add(item);
-                sessao.setAttribute("carrinho", carrinho);
-            }else{
-
+   
             List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
             
-            carrinho.add(item);
+            
+            
+            for(int i = 0; i < carrinho.size(); i++){
+                String nome1= produto.getNomeProduto();
+                String nome2 = carrinho.get(i).getNome();
+                if( nome1.equals(nome2)){
+                    carrinho.get(i).setQtde(carrinho.get(i).getQtde() + 1);
+                    break;
+                }
+            
+            }
+            
+            
             
             sessao.setAttribute("carrinho", carrinho);
-            }
+            
            
             
             
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/mostrar-carrinho");
 
             //RequestDispatcher dispatcher = request.getRequestDispatcher("clienteConsultado.jsp");
             //dispatcher.forward(request, response);

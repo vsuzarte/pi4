@@ -15,17 +15,18 @@ public class Cliente {
     
     private Integer idCliente;
     private String nomeCliente;
-    private String emailCliente;
-    private String senhaCliente;
-    private String cepCliente;
-    private String estadoCliente;
-    private String cidadeCliente;
-    private String ruaCliente;
-    private String numCasa;
-    private String complemento;
-    private String bairro;
     private String nomeContato;
+    private String bairro;
+    private String cepCliente;
+    private String cidadeCliente;
+    private String complemento;
+     private String emailCliente;
+     private String estadoCliente;
+    private String numCasa;
+    private String senhaCliente;
+    private String ruaCliente;
     private String telefoneCliente;
+    
 
     public Cliente(String nomeCliente, String emailCliente, String senhaCliente, String cepCliente, String estadoCliente, String cidadeCliente, String ruaCliente, String numCasa, String complemento, String bairro, String nomeContato, String telefoneCliente) {
         this.nomeCliente = nomeCliente;

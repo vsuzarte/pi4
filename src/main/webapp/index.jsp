@@ -45,7 +45,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="carrinho.html">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
+                <a href="mostrar-carrinho" class="nav-link" >Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="compras.html">Suas Compras <i class="fas fa-shopping-bag"></i></a>
@@ -158,7 +158,7 @@
             </figure>
 
             <button type="button"  class="btn btn-sm mb-1 but-compra">Detalhes</button>
-            <button type="button" class="btn btn-sm mb-1 but-compra">Comprar</button>
+            <a href="add-produto-carrinho?produto=${produto.nomeProduto}" class="btn btn-sm mb-1 but-compra">Comprar</a>
 
           </div>
               

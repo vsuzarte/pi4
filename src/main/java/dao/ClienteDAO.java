@@ -28,7 +28,7 @@ public class ClienteDAO {
 
         String sql = "INSERT INTO Cliente(nomeCliente, nomeContato, bairro, cepCliente, cidadeCliente, complemento,"
                 + " emailCliente, estadoCliente, numCasa, ruaCliente, senhaCliente, telefoneCLiente, disponivel) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
         PreparedStatement stmt = null;
 

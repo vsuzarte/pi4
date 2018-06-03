@@ -13,10 +13,30 @@ public class ItemVenda {
 
     private int id;
     private int qtde;
+    private String descricao; //INSERIR NO BANCO !!!!!!!!!
     private int idProduto;
     private String nome;
     private double preco;
     private double valor;
+
+    public ItemVenda(int qtde, String descricao, String nome, double preco, double valor) {
+        this.qtde = qtde;
+        this.descricao = descricao;
+        this.nome = nome;
+        this.preco = preco;
+        this.valor = valor;
+    }
+
+   
+ 
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public String getnomeProduto() {
         return nome;
@@ -27,6 +47,7 @@ public class ItemVenda {
     }
 
     public double getValor() {
+        valor = preco * qtde;
         return valor;
     }
 

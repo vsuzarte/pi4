@@ -403,6 +403,7 @@ public class ProdutoDAO {
      public static Produto procurarProdutoPorNome(String nome) throws SQLException, Exception {
 
         String sql = "SELECT * FROM produto WHERE (nomeProduto)=? AND DISPONIVEL=?";
+        
         //Lista de clientes de resultado
         List<Produto> listaProdutos = null;
         Produto produto = null;
