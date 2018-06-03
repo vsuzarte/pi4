@@ -19,6 +19,7 @@
         c4 VARCHAR(255),
         c5 VARCHAR(255),
         c6 VARCHAR(255),
+        categoria VARCHAR(255),
         disponivel BOOLEAN
        
 );
