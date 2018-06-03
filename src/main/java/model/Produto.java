@@ -5,8 +5,6 @@
  */
 package model;
 
-import java.sql.Date;
-
 /**
  *
  * @author guilherme.gcosta6
@@ -24,8 +22,23 @@ public class Produto {
     private String c5;
     private String c6;
     private String categoria;
+    private String img;
 
-    public Produto(Integer idProduto, String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6, String categoria) {
+    public Produto(String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6, String categoria, String img) {
+        this.nomeProduto = nomeProduto;
+        this.descricao = descricao;
+        this.valorProduto = valorProduto;
+        this.c1 = c1;
+        this.c2 = c2;
+        this.c3 = c3;
+        this.c4 = c4;
+        this.c5 = c5;
+        this.c6 = c6;
+        this.categoria = categoria;
+        this.img = img;
+    }
+
+    public Produto(Integer idProduto, String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6, String categoria, String img) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
@@ -37,20 +50,15 @@ public class Produto {
         this.c5 = c5;
         this.c6 = c6;
         this.categoria = categoria;
+        this.img = img;
     }
 
-    public Produto(String nomeProduto, String descricao, double valorProduto, String c1, String c2, String c3, String c4, String c5, String c6, String categoria) {
-        this.nomeProduto = nomeProduto;
-        this.descricao = descricao;
-        this.valorProduto = valorProduto;
-        this.c1 = c1;
-        this.c2 = c2;
-        this.c3 = c3;
-        this.c4 = c4;
-        this.c5 = c5;
-        this.c6 = c6;
-        this.categoria = categoria;
+    public String getImg() {
+        return img;
+    }
 
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getCategoria() {

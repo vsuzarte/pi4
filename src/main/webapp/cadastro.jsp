@@ -102,6 +102,14 @@
                 <input type="text" class="form-control" id="desc6" name = "c6" placeholder="Desc6" required>
               </div>
             </div>
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="desc5">Img*</label>
+                <input type="text" class="form-control" id="img" name = "img" placeholder="img" required>
+              </div>
+              
+            </div>
 
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Salvar</button>

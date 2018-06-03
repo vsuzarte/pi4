@@ -144,7 +144,9 @@
 
             <div class="mycard text-center">
               <figure>
-               
+                
+                  <img src='<c:url value="${produto.img}"/>' style="width: 130px; height: 130px" alt= {{p.nome}}>
+                  
                 <div>
                   <h3><c:out value="${produto.nomeProduto}"/></h3>
                   <h3><c:out value="${produto.categoria}"/></h3>

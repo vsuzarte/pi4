@@ -27,8 +27,8 @@ public class ProdutoDAO {
 
         Connection conn = null;
 
-        String sql = "INSERT INTO Produto(c1,c2,c3,c4,c5,c6,descricao, nomeProduto, valorProduto, categoria, disponivel)"
-                + "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
+        String sql = "INSERT INTO Produto(c1,c2,c3,c4,c5,c6,descricao, nomeProduto, valorProduto, categoria, img, disponivel)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?, ?)";
 
         PreparedStatement stmt = null;
 
@@ -57,7 +57,9 @@ public class ProdutoDAO {
 
             stmt.setString(10, produto.getCategoria());
             
-            stmt.setBoolean(11, true);
+            stmt.setString(11, produto.getImg());
+            
+            stmt.setBoolean(12, true);
 
             stmt.execute();
 
@@ -117,9 +119,10 @@ public class ProdutoDAO {
                 String c6 = result.getString("c6");
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
+                String img = result.getString("img");
 
 
-                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria);
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
 
                 listaProdutos.add(produto);
                 
@@ -228,9 +231,9 @@ public class ProdutoDAO {
                 String c6 = result.getString("c6");
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
+                String img = result.getString("img");
 
-
-                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria);
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
 
                 listaProdutos.add(produto);
             }
@@ -257,7 +260,7 @@ public class ProdutoDAO {
     public static void atualizarProduto(Produto produto) throws SQLException, Exception {
 
         String sql = "UPDATE produto SET nomeProduto=?, c1=?,c2=?,c3=?,c4=?,c5=?,c6=?,  "
-                + " categoria=?, valorProduto=?"
+                + " categoria=?, valorProduto=?, img=?"
                 + " WHERE (idProduto=?)";
 
         //connection para abertura e fechamento.
@@ -295,8 +298,10 @@ public class ProdutoDAO {
             preparedStatement.setString(8, produto.getCategoria());
 
             preparedStatement.setDouble(9, produto.getValorProduto());
+            
+            preparedStatement.setString(10, produto.getImg());
 
-            preparedStatement.setInt(10, produto.getIdProduto());
+            preparedStatement.setInt(11, produto.getIdProduto());
 
             //Exucuta o comando do banco de dados.
             preparedStatement.execute();
@@ -366,9 +371,10 @@ public class ProdutoDAO {
                 String c6 = result.getString("c6");
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
+                String img = result.getString("img");
 
 
-                Produto produto = new Produto(idProduto,nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria);
+                Produto produto = new Produto(idProduto,nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
 
                 //Retorna o resultado
                 return produto;
@@ -454,9 +460,9 @@ public class ProdutoDAO {
                 String c6 = result.getString("c6");
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
+                String img = result.getString("img");
 
-
-               produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria);
+               produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
 
                 return produto;
               

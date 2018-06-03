@@ -78,8 +78,9 @@ public class CadastroProduto extends HttpServlet {
         String c6 = request.getParameter("c6");
         String categoria = request.getParameter("categoria");
         double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
+        String img = request.getParameter("img");
 
-        Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1, c2, c3, c4, c5, c6, categoria);
+        Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1, c2, c3, c4, c5, c6, categoria, img);
 
             try {
                 ProdutoDAO.inserirProduto(produto);
