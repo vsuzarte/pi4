@@ -29,24 +29,54 @@ import model.ItemVenda;
  *
  * @author gabriel.sleal1
  */
-@WebServlet(name = "FinalizarVenda", urlPatterns = {"/finalizar-venda"})
-public class FinalizarVenda extends HttpServlet {
+@WebServlet(name = "FinalizarVendaPagamento", urlPatterns = {"/finalizar-venda-pagamento"})
+public class FinalizarVendaPagamento extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
-        
+        String cartao = request.getParameter("cartao");
+        Cliente cliente = (Cliente) sessao.getAttribute("cliente");
         if(sessao.getAttribute("cliente") == null){
              RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/login.jsp");
              dispatcher.forward(request, response);
         }else{
             
-             RequestDispatcher dispatcher
-                    = request.getRequestDispatcher("/pagamento.jsp");
+            if(cliente.getRuaCliente() == null){
+               RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/cadastrarEndereco.jsp");
              dispatcher.forward(request, response);
-         
+            }
+            
+           
+           
+           List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
+           double total = 0;
+            for(int i = 0; i < carrinho.size(); i++){
+                total += carrinho.get(i).getValor();
+            }
+   
+            try {
+                Venda venda = VendaDAO.realizarVenda(cliente.getIdCliente(), total, cartao);
+                for(int i = 0; i < carrinho.size(); i++){
+                    
+                    ItemVendaDAO.inserirItemVenda(venda.getId(), carrinho.get(i).getIdProduto(), carrinho.get(i).getQtde());
+                    
+                }
+                
+                
+            } catch (Exception ex) {
+                Logger.getLogger(FinalizarVendaPagamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            carrinho = null;
+            sessao.setAttribute("carrinho", carrinho);
+             RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/index.jsp");
+             dispatcher.forward(request, response);
+          
         }
 
         
@@ -58,34 +88,6 @@ public class FinalizarVenda extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        HttpSession sessao = request.getSession();
-//        
-//        if(sessao.getAttribute("cliente") == null){
-//             RequestDispatcher dispatcher
-//                    = request.getRequestDispatcher("/login.jsp");
-//             dispatcher.forward(request, response);
-//        }else{
-//            
-//            Cliente cliente = (Cliente) sessao.getAttribute("cliente");
-//           List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
-//           double total = 0;
-//            for(int i = 0; i < carrinho.size(); i++){
-//                total += carrinho.get(i).getValor();
-//            }
-//   
-//            try {
-//                VendaDAO.realizarVenda(cliente.getIdCliente(), total);
-//                
-//                sessao.setAttribute("carrinho", null);
-//            } catch (Exception ex) {
-//                Logger.getLogger(FinalizarVenda.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            
-//            
-//           RequestDispatcher dispatcher
-//                    = request.getRequestDispatcher("/index.jsp");
-//             dispatcher.forward(request, response);
-//        }
 
 }
 }

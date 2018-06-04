@@ -16,9 +16,28 @@ public class Venda {
     private int idCliente;
     private double valor;
     private float total;
+    private String cartao;
+    private String status;
 
-    public Venda(int idCliente, double valor) {
+    public String getCartao() {
+        return cartao;
+    }
+
+    public void setCartao(String cartao) {
+        this.cartao = cartao;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Venda(int idCliente, double valor, String cartao ,String status) {
         this.idCliente = idCliente;
+        this.cartao = cartao;
         this.valor = valor;
     }
     

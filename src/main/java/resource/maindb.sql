@@ -56,6 +56,8 @@
         idVenda INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
         idCliente INT NOT NULL,
         valorTotal DOUBLE NOT NULL,
+        cartao VARCHAR(255),
+        status VARCHAR(255),
         FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente)
       
 );
@@ -74,7 +76,7 @@
 INSERT INTO USUARIO(NOMEUSUARIO,FUNCAO,USERNAME,SENHA,DISPONIVEL) VALUES ('ADMIN','gerente','ADMIN','ADMIN',TRUE);
 
 
-INSERT INTO CLIENTE(nomeCliente,emailCliente,senhaCliente,cepCliente,estadoCliente,ruaCliente,numCasa,complemento,bairro,nomeContato,telefoneCliente,disponivel) VALUES ('biel', 'biel@biel','123','0677105','bra','bra',12,'123','haha','ha','454545',TRUE);
+INSERT INTO CLIENTE(nomeCliente,emailCliente,senhaCliente,cepCliente,estadoCliente,ruaCliente,numCasa,complemento,bairro,nomeContato,telefoneCliente,disponivel) VALUES ('Gabriel', 'gabriel@hotmail.com','123','05831120','SP','Rua akidaban','666','K','haha','ha','454545',TRUE);
  
 
 

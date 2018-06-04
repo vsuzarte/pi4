@@ -24,15 +24,15 @@ import model.Venda;
  */
 public class VendaDAO {
 
-    public static Venda realizarVenda(int idCliente, double valor) throws SQLException, Exception {
-        Venda venda = new Venda(idCliente, valor);
+    public static Venda realizarVenda(int idCliente, double valor, String cartao) throws SQLException, Exception {
+        Venda venda = new Venda(idCliente, valor, cartao , "pendente");
         Connection conn = null;
 //idVenda INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 //        idCliente INT NOT NULL,
 //        valorTotal DOUBLE NOT NULL,
 //        FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente)
-        String sql = "INSERT INTO Venda(idCliente,ValorTotal)"
-                + "VALUES (?, ?)";
+        String sql = "INSERT INTO Venda(idCliente,ValorTotal, cartao, status)"
+                + "VALUES (?, ?, ?, ?)";
 
         PreparedStatement stmt = null;
 
@@ -44,6 +44,10 @@ public class VendaDAO {
             stmt.setInt(1, idCliente);
 
             stmt.setDouble(2, valor);
+            
+            stmt.setString(3, cartao);
+            
+             stmt.setString(4, "pendente");
 
             stmt.execute();
             
