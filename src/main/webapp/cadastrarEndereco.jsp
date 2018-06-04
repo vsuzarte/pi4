@@ -78,11 +78,11 @@
         </div>
         <div class="col-md-8 order-md-1 bg-razer pt-2 pb-4">
           <h4 class="mb-3">Cadastrar Endereço</h4>
-          <form class="needs-validation" novalidate>
+          <form action="cadastro-endereco" method="post" class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="zip">CEP*</label>
-                <input type="text" class="form-control" id="zip" placeholder="CEP" required>
+                <input name="cep" type="text" class="form-control" id="zip" placeholder="CEP" required>
                 <div class="invalid-feedback">
                   Preencha do CEP.
                 </div>
@@ -95,14 +95,14 @@
            <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="estado">Estado</label>
-                <input type="text" class="form-control" id="estado" placeholder="Estado" disabled required>
+                <input name ="estado" type="text" class="form-control" id="estado" placeholder="Estado" required>
                 <div class="invalid-feedback">
                   Preencha o Estado.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                  <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled required>
+                <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" required>
                 <div class="invalid-feedback">
                   Preencha a Cidade.
                 </div>
@@ -112,14 +112,14 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="rua">Rua/Avenida*</label>
-                <input type="text" class="form-control" id="rua" placeholder="Rua/Avenida" required>
+                <input name="rua" type="text" class="form-control" id="rua" placeholder="Rua/Avenida" required>
                 <div class="invalid-feedback">
                   Preencha a Rua/Avenida.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                  <label for="num">Número*</label>
-                <input type="text" class="form-control" id="num" placeholder="Número" required>
+                <input name="numero" type="text" class="form-control" id="num" placeholder="Número" required>
                 <div class="invalid-feedback">
                   Preencha o Número.
                 </div>
@@ -128,36 +128,19 @@
 
             <div class="mb-3">
               <label for="address2">Complemento<span class="text-muted">(Opcional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartamento ou casa">
+              <input name="complemento" type="text" class="form-control" id="address2" placeholder="Apartamento ou casa">
             </div>
 
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="rua">Bairro*</label>
-                <input type="text" class="form-control" id="bairro" placeholder="Bairro" required>
+                <input name="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro" required>
                 <div class="invalid-feedback">
                   Preencha o Bairro.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                  
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="nome">Nome de contato*</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome de contato" required>
-                <div class="invalid-feedback">
-                  Preencha o nome do contato.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                 <label for="contato">Número de contato*</label>
-                <input type="text" class="form-control" id="contato" placeholder="Número de contato" required>
-                <div class="invalid-feedback">
-                  Preencha o número de contato.
-                </div>
               </div>
             </div>
 

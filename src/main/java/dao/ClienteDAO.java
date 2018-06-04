@@ -13,6 +13,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ClienteDAO {
 
             conn = ConnectionUtils.getConnection();
 
-            stmt = conn.prepareStatement(sql);
+            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setString(1, cliente.getNomeCliente());
 
@@ -47,6 +48,13 @@ public class ClienteDAO {
             stmt.setBoolean(4, true);
 
             stmt.execute();
+            
+            final ResultSet rs = stmt.getGeneratedKeys();
+            if (rs.next()) {
+                final int lastId = rs.getInt(1);
+                cliente.setIdCliente(lastId);
+                
+            }
 
         } finally {
 
@@ -154,4 +162,67 @@ public class ClienteDAO {
         return null;
     }
 
+     public static void cadastrarEndereco(Cliente cliente) throws SQLException, Exception {
+
+        //Monta a string com o comando SQL para atualizar dados na tabela cliente
+        //ultilizando os dados do cliente passado por parâmetro.
+        //A String ira ser ultilizada pelo prepared statement
+        String sql = "UPDATE cliente SET  cepCliente=?, estadoCliente=?, cidadeCliente=?, ruaCliente=?, numCasa=?, complemento=?, bairro=? "
+                + "WHERE (idCliente=?)";
+
+        //connection para abertura e fechamento.
+        Connection connection = null;
+
+        //PreparedStatement para os comandos SQL e fechamento do mesmo.
+        PreparedStatement preparedStatement = null;
+
+        try {
+
+            ////chama a classe criada ConnectionUtils.
+            //abre a conexão com o banco de dados.
+            connection = ConnectionUtils.getConnection();
+
+            //cria um statement para execução de instruções SQL.
+            preparedStatement = connection.prepareStatement(sql);
+
+            //Configura os parâmetros do PreparedSatamente
+            //cada preparedStatement ira ocupar uma interrogação na instrução SQL
+            //que foi digitada acima, trocando seus valores pelo obtido do Cliente.
+            preparedStatement.setString(1, cliente.getCepCliente());
+
+            preparedStatement.setString(2, cliente.getEstadoCliente());
+
+         
+
+            preparedStatement.setString(3, cliente.getCidadeCliente());
+
+            preparedStatement.setString(4, cliente.getRuaCliente());
+
+            preparedStatement.setString(5, cliente.getNumCasa());
+
+            preparedStatement.setString(6, cliente.getComplemento());
+
+            preparedStatement.setString(7, cliente.getBairro());
+            
+            preparedStatement.setInt(8, cliente.getIdCliente());
+
+            //Exucuta o comando do banco de dados.
+            preparedStatement.execute();
+
+        } finally {
+
+            //Se o statement ainda estiver aberto, realiza seu fechamento. 
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            //Se a conexão ainda estiver aberta, realiza seu fechamento.
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+
+        }
+
+    }
+    
 }

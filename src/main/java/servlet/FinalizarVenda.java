@@ -36,12 +36,19 @@ public class FinalizarVenda extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
-        
+        Cliente cliente = (Cliente) sessao.getAttribute("cliente");
         if(sessao.getAttribute("cliente") == null){
              RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/login.jsp");
              dispatcher.forward(request, response);
         }else{
+            
+        
+            if(cliente.getRuaCliente() == null){
+               RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/cadastrarEndereco.jsp");
+             dispatcher.forward(request, response);
+            }
             
              RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/pagamento.jsp");
@@ -58,34 +65,6 @@ public class FinalizarVenda extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        HttpSession sessao = request.getSession();
-//        
-//        if(sessao.getAttribute("cliente") == null){
-//             RequestDispatcher dispatcher
-//                    = request.getRequestDispatcher("/login.jsp");
-//             dispatcher.forward(request, response);
-//        }else{
-//            
-//            Cliente cliente = (Cliente) sessao.getAttribute("cliente");
-//           List<ItemVenda> carrinho = (List<ItemVenda>) sessao.getAttribute("carrinho");
-//           double total = 0;
-//            for(int i = 0; i < carrinho.size(); i++){
-//                total += carrinho.get(i).getValor();
-//            }
-//   
-//            try {
-//                VendaDAO.realizarVenda(cliente.getIdCliente(), total);
-//                
-//                sessao.setAttribute("carrinho", null);
-//            } catch (Exception ex) {
-//                Logger.getLogger(FinalizarVenda.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            
-//            
-//           RequestDispatcher dispatcher
-//                    = request.getRequestDispatcher("/index.jsp");
-//             dispatcher.forward(request, response);
-//        }
 
 }
 }
