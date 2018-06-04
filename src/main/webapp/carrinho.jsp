@@ -47,10 +47,10 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="carrinho.html">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
+              <a class="nav-link" href="mostrar-carrinho">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="compras.html">Suas Compras <i class="fas fa-shopping-bag"></i></a>
+              <a class="nav-link" href="vendas.jsp">Suas Compras <i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
           <form class="form-inline">
@@ -59,10 +59,10 @@
           </form>
           <div class="registro">
           <span class="navbar-text">
-            <button class="btn btn-sm btn-outline-secondary" type="button">Entre <i class="fas fa-user"></i></button>
+            <a href="login.jsp" class="btn btn-sm btn-outline-secondary" type="button">Entre <i class="fas fa-user"></i></a>
           </span>
           <span class="navbar-text">
-            <a class="btn btn-sm btn-outline-secondary" href="login.html" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
+            <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
           </span>
         </div>
         </div>

@@ -61,7 +61,7 @@
           </form>
           <div class="registro">
           <span class="navbar-text">
-            <button class="btn btn-sm btn-outline-secondary" type="button">Entre <i class="fas fa-user"></i></button>
+            <a href="login.jsp" class="btn btn-sm btn-outline-secondary" type="button">Entre <i class="fas fa-user"></i></a>
           </span>
           <span class="navbar-text">
             <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
