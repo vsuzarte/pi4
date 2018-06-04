@@ -38,7 +38,7 @@
         complemento VARCHAR(50),
         bairro VARCHAR(50),
         nomeContato VARCHAR(50),
-        telefoneCliente VARCHAR(14) NOT NULL,
+        telefoneCliente VARCHAR(14),
         disponivel BOOLEAN
 );
 

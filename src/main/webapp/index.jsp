@@ -60,7 +60,7 @@
               <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Entre <i class="fas fa-user"></i></a>
             </span>
             <span class="navbar-text">
-              <a class="btn btn-sm btn-outline-secondary" href="cadastro.html" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
+              <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
             </span>
           </div>
           </div>

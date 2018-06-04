@@ -26,6 +26,12 @@ public class Cliente {
     private String senhaCliente;
     private String ruaCliente;
     private String telefoneCliente;
+
+    public Cliente(String nomeCliente, String emailCliente, String senhaCliente) {
+        this.nomeCliente = nomeCliente;
+        this.emailCliente = emailCliente;
+        this.senhaCliente = senhaCliente;
+    }
     
 
     public Cliente(String nomeCliente, String emailCliente, String senhaCliente, String cepCliente, String estadoCliente, String cidadeCliente, String ruaCliente, String numCasa, String complemento, String bairro, String nomeContato, String telefoneCliente) {

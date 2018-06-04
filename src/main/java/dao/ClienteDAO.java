@@ -26,9 +26,9 @@ public class ClienteDAO {
 
         Connection conn = null;
 
-        String sql = "INSERT INTO Cliente(nomeCliente, nomeContato, bairro, cepCliente, cidadeCliente, complemento,"
-                + " emailCliente, estadoCliente, numCasa, ruaCliente, senhaCliente, telefoneCLiente, disponivel) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
+        String sql = "INSERT INTO Cliente(nomeCliente,"
+                + " emailCliente,senhaCliente, disponivel) "
+                + "VALUES (?, ?, ?, ?)";
 
         PreparedStatement stmt = null;
 
@@ -40,29 +40,11 @@ public class ClienteDAO {
 
             stmt.setString(1, cliente.getNomeCliente());
 
-            stmt.setString(2, cliente.getNomeContato());
+            stmt.setString(2, cliente.getEmailCliente());
 
-            stmt.setString(3, cliente.getBairro());
+            stmt.setString(3, cliente.getSenhaCliente());
 
-            stmt.setString(4, cliente.getCepCliente());
-
-            stmt.setString(5, cliente.getCidadeCliente());
-
-            stmt.setString(6, cliente.getComplemento());
-
-            stmt.setString(7, cliente.getEmailCliente());
-
-            stmt.setString(8, cliente.getEstadoCliente());
-
-            stmt.setString(9, cliente.getNumCasa());
-
-            stmt.setString(10, cliente.getRuaCliente());
-
-            stmt.setString(11, cliente.getSenhaCliente());
-
-            stmt.setString(12, cliente.getTelefoneCliente());
-
-            stmt.setBoolean(13, true);
+            stmt.setBoolean(4, true);
 
             stmt.execute();
 
