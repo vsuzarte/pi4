@@ -27,7 +27,7 @@
   <div class="container">
       <div class="py-5 text-center">
         
-         <a href="index.html"><img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72"></a>
+         <a href="index.jsp"><img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72"></a>
        
       </div>
 

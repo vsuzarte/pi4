@@ -36,7 +36,7 @@
         <div class="checkbox mb-3">
         </div>
         <button class="btn btn-lg btn-block but mb-3" type="submit">Continuar</button>
-        <a href="cadastro.html" class="text-muted">Criar conta</a>
+        <a href="cadastroCliente.jsp" class="text-muted">Criar conta</a>
         <p class="mt-5 mb-3 text-muted">&copy; 2018 HeadShot.com</p>
       </form>
 

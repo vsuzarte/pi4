@@ -44,7 +44,7 @@
         </div>
         <button class="btn btn-lg btn-block but mb-3" type="submit">Criar conta</button>
 
-        <a href="index.html" class="text-muted">Cancelar</a>
+        <a href="index.jsp" class="text-muted">Cancelar</a>
 
         <p class="mt-5 mb-3 text-muted">&copy; 2018 HeadShot.com</p>
       </form>
