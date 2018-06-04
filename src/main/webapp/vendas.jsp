@@ -30,7 +30,7 @@
 
       <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html">HeadShot<img id="logo" src="img/headshot.jpg" alt="imagem logo do site">com</a>
+          <a class="navbar-brand" href="index.jsp">HeadShot<img id="logo" src="img/headshot.jpg" alt="imagem logo do site">com</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,10 +49,10 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="carrinho.html">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
+              <a class="nav-link" href="mostrar-carrinho">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="compras.html">Suas Compras <i class="fas fa-shopping-bag"></i></a>
+              <a class="nav-link" href="vendas.jsp">Suas Compras <i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
           <form class="form-inline">
@@ -64,7 +64,7 @@
             <button class="btn btn-sm btn-outline-secondary" type="button">Entre <i class="fas fa-user"></i></button>
           </span>
           <span class="navbar-text">
-            <a class="btn btn-sm btn-outline-secondary" href="login.html" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
+            <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
           </span>
         </div>
         </div>
