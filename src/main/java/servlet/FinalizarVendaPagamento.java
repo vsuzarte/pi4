@@ -60,6 +60,9 @@ public class FinalizarVendaPagamento extends HttpServlet {
    
             try {
                 Venda venda = VendaDAO.realizarVenda(cliente.getIdCliente(), total, cartao);
+                venda.setStatus("pendente");
+                            sessao.setAttribute("ultimaVenda", venda);
+
                 for(int i = 0; i < carrinho.size(); i++){
                     
                     ItemVendaDAO.inserirItemVenda(venda.getId(), carrinho.get(i).getIdProduto(), carrinho.get(i).getQtde());
@@ -74,7 +77,7 @@ public class FinalizarVendaPagamento extends HttpServlet {
             carrinho = null;
             sessao.setAttribute("carrinho", carrinho);
              RequestDispatcher dispatcher
-                    = request.getRequestDispatcher("/index.jsp");
+                    = request.getRequestDispatcher("/vendas.jsp");
              dispatcher.forward(request, response);
           
         }
