@@ -58,7 +58,7 @@ public class AdicionarProduto extends HttpServlet {
                 sessao.setAttribute("carrinho", carrinho);
             }
             
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/mostrar-carrinho");
 
             //RequestDispatcher dispatcher = request.getRequestDispatcher("clienteConsultado.jsp");
             //dispatcher.forward(request, response);

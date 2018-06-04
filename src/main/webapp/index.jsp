@@ -51,7 +51,7 @@
                 <a class="nav-link" href="compras.html">Suas Compras <i class="fas fa-shopping-bag"></i></a>
               </li>
             </ul>
-            <form class="form-inline">
+            <form action="consultar-produto" method="get"class="form-inline">
               <input class="form-control" type="search" name ="nome" placeholder="Buscar no site." aria-label="Search">
               <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
             </form>
