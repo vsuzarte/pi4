@@ -3,6 +3,7 @@
     Created on : 03/06/2018, 23:03:49
     Author     : gabrielsousa
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,47 +32,27 @@
       </div>
 
       <div class="row">
-        <div class="col-md-4 order-md-2 mb-4 bg-razer pt-2 pb-4">
+        <div class="col-md-4 order-md-2 mb-4 pt-2 pb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Carrinho</span>
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
+            
           <ul class="list-group mb-3">
+    
+              <c:forEach items="${carrinho}" var="produto">
+                  
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <img class="text-center" src="img/death.png" style="height: 70px; width: 70px;" alt="Mouse deathAdder" class="img-responsive"/>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+                <img class="text-center" src='<c:url value="${produto.img}"/>' style="height: 70px; width: 70px;" alt="Mouse deathAdder" class="img-responsive"/>
+                <h6 class="my-0">${produto.nomeProduto}</h6>
+                <small class="text-muted">${produto.descricao}</small>
               </div>
-              <span class="text-muted">R$12</span>
+              <span class="text-muted">R$ ${produto.valor}</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <img class="text-center" src="img/death.png" style="height: 70px; width: 70px;" alt="Mouse deathAdder" class="img-responsive"/>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">R$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <img class="text-center" src="img/death.png" style="height: 70px; width: 70px;" alt="Mouse deathAdder" class="img-responsive"/>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">R$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-<RP></RP>$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total </span>
-              <strong>$20</strong>
-            </li>
+            
+            </c:forEach>
+         
           </ul>
 
          
