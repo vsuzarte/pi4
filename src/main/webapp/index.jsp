@@ -56,11 +56,21 @@
               <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
             </form>
             <div class="registro">
+                <c:if test = "${sessionScope.cliente == null}">
             <span class="navbar-text">
-              <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Entre <i class="fas fa-user"></i></a>
+              <a class="btn btn-sm btn-outline-secondary" href="login.jsp">Entre <i class="fas fa-user"></i></a>
             </span>
+                </c:if>
+                
+                   <c:if test = "${sessionScope.cliente != null}">
+                       <p class="btn btn-sm btn-outline-secondary">Bem vindo ${cliente.nomeCliente} <i class="fas fa-user"></i></p>
             <span class="navbar-text">
-              <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
+              <a class="btn btn-sm btn-outline-secondary" href="logout">Sair <i class="fas fa-user"></i></a>
+            </span>
+                </c:if>
+                
+            <span class="navbar-text">
+              <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" t>Cadastre-se <i class="fas fa-user-plus"></i></a>
             </span>
           </div>
           </div>
@@ -159,7 +169,7 @@
 
             </figure>
 
-            <button type="button"  class="btn btn-sm mb-1 but-compra">Detalhes</button>
+            <a href="ver-detalhes?nome=${produto.nomeProduto}"  class="btn btn-sm mb-1 but-compra">Detalhes</a>
             <a href="add-produto-carrinho?produto=${produto.nomeProduto}" class="btn btn-sm mb-1 but-compra">Comprar</a>
 
           </div>

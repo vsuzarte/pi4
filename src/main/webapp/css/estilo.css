@@ -16,6 +16,11 @@ body{
 	color: #f8f9fa;
 }
 
+.navbar-dark .navbar-text a {
+    color: white;
+    background: black;
+}
+
 
 h1{
 	font-size: 25px;

@@ -31,13 +31,7 @@ public class AdicionarProduto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
-//        if (sessao == null || sessao.getAttribute("usuario") == null) {
-//            request.setAttribute("mensagemErro", "Você precisa logar ! ");
-//            RequestDispatcher dispatcher
-//                    = request.getRequestDispatcher("/index.jsp");
-//            dispatcher.forward(request, response);
-//
-//        }
+
 
         try {
             
@@ -60,8 +54,7 @@ public class AdicionarProduto extends HttpServlet {
             
             response.sendRedirect(request.getContextPath() + "/mostrar-carrinho");
 
-            //RequestDispatcher dispatcher = request.getRequestDispatcher("clienteConsultado.jsp");
-            //dispatcher.forward(request, response);
+            
         } catch (Exception e) {
 //             response.sendRedirect(request.getContextPath() + "/index.jsp");
             

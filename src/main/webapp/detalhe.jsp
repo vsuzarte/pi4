@@ -1,25 +1,24 @@
 <%-- 
-    Document   : vendas
-    Created on : 04/06/2018, 00:01:02
+    Document   : detalhe
+    Created on : 05/06/2018, 10:47:04
     Author     : gabrielsousa
 --%>
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="hs" ng-controller="principal">
 
 <head>
   <title>LOJA</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="css/estilo.css">
   <link rel="stylesheet" type="text/css" href="css/navBlack.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+  <link rel="stylesheet" href="css/gallery.css" type="text/css">
 
 </head>
 
@@ -52,7 +51,7 @@
               <a class="nav-link" href="mostrar-carrinho">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vendas.jsp">Suas Compras <i class="fas fa-shopping-bag"></i></a>
+              <a class="nav-link" href="mostrar-compras">Suas Compras <i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
           <form class="form-inline">
@@ -73,7 +72,7 @@
             </span>
                 </c:if>
           <span class="navbar-text">
-            <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" >Cadastre-se <i class="fas fa-user-plus"></i></a>
+            <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
           </span>
         </div>
         </div>
@@ -83,62 +82,153 @@
   </div>
   </div> <!-- FIM CONTAINER HEADER -->
 
-<div class="container mt-3">
-  
-
-  <div class="row">
-
-    <h1>Última compra</h1>
-
-    <div class="col-12">
-    <div class="card card-compras">
-  <div class="card-header">
-     <c:forEach items="${listaCompras}" var="produto">
-    <div class="row">
-        <div class="col-md-3">
-          <h3>Número Pedido</h3>
-          <b>${produto.id}</b>
-        </div>
-        <div class="col-md-3">
-          <h3>Pagamento</h3>
-          <b>${produto.cartao}</b>
-        </div>
-        <div class="col-md-3">
-          <h3>Status Pedido</h3>
-          <b>${produto.status}</b>
-        </div>
-        <div class="col-md-3">
-          <h3>Previsão de entrega</h3>
-          <b>30/06/2018</b>
-        </div>
-    </div>
-
-     </c:forEach>
-  </div>
-
- 
 
 
-  
-  </div>
-  </div>
+  <div class="container-fluid mt-3 mb-3 bg-razer">
+
+<div class="row">
+    "
+    
+<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"" text-center">
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><img class="img-show" src='<c:url value="${detalhe.img}"/>'></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><img class="img-show" src="img/produtos/mouse/adder/adderG1.jpg"></div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><img class="img-show" src="img/produtos/mouse/adder/adderG1.jpg"></div>
+</div>
+
+<div class="text-center">
+<ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
+<li class="nav-item">
+<a class="nav-link active ml-3" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><img class="img-view" src="img/produtos/mouse/adder/adderP1.png"></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><img class="img-view" src="img/produtos/mouse/adder/adderP1.png"></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><img class="img-view" src="img/produtos/mouse/adder/adderP1.png"></a>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+  <h1><c:out value="${detalhe.nomeProduto}"/></h1>
+  <p><c:out value="${detalhe.descricao}"/></p>
+  <span class="mb-2" id="span-prec">R$ <c:out value="${detalhe.valorProduto}"/></span></br>
+  <span class="mb-2"><i class="fas fa-credit-card"> </i> 1x de R$ <c:out value="${detalhe.valorProduto}"/></span><br/>
+  <span class="mb-2" id="span-frete"><i class="fas fa-truck"></i> Frete grátis para todo o país</span></br>
+  <span class="mb-2"><i class="fas fa-reply"></i> Devolução grátis por 0 dias </span><br/>
 
 
+<!--  <div class="input-group number-spinner mt-2 mb-3">
+    <span class="input-group-btn">
+      <button class="btn btn-default but-compra" data-dir="dwn"><i class="fas fa-minus"></i></button>
+    </span>
+    <input type="text" id="quanti" class="text-center" disabled value="1">
+    <span class="input-group-btn">
+      <button class="btn btn-default but-compra" data-dir="up"><i class="fas fa-plus"></i></button>
+    </span>
+  </div>-->
 
-  </div>
+  <a href="add-produto-carrinho?produto=${detalhe.nomeProduto}"class="btn btn-sn mb-1 but-compra">Comprar</a>
+  <a  href="add-produto-carrinho?produto=${detalhe.nomeProduto}" class="btn btn-sn mb-1 but-compra">Adicionar ao Carrinho</a>
+
+
+</div>
+
+
 
    
-  
+</div>
+
+</div>
+
+
+<div class="container-fluid bg-razer">
+  <div class="row">
+
+    <div class="col-12 text-center mt-3">
+    <h1>Caracteristicas</h1>
+    </div>
+
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
+    <ul>
+      <li class="mb-3"><strong>Marca:</strong><br/>
+        <span class="p-desc"><c:out value="${detalhe.c1}"/></span></li>
+        <li class="mb-3"><strong>Modelo:</strong><br/>
+          <span class="p-desc"><c:out value="${detalhe.c2}"/></span></li>
+          <li class="mb-3"><strong>Material:</strong><br/>
+            <span class="p-desc"><c:out value="${detalhe.c3}"/></span></li>
+    </ul>
+
+  </div>
+
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
+    <ul>
+      <li class="mb-3"><strong>Largura:</strong><br/>
+        <span class="p-desc"><c:out value="${detalhe.c4}"/></span></li>
+        <li class="mb-3"><strong>Comprimento:</strong><br/>
+          <span class="p-desc"><c:out value="${detalhe.c5}"/></span></li>
+          <li class="mb-3"><strong>Espessura:</strong><br/>
+            <span class="p-desc"><c:out value="${detalhe.c6}"/></span></li>
+    </ul>
+
   </div>
 
 
+  </div>
+
+</div>
 
 
-<div class="container-fluid mt-3">
+
+<div class="container-fluid gallery-container bg-razer">
+
+    <h1 class="text-center">Fotos</h1>
+
+    <div class="tz-gallery">
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <a class="lightbox" href="img/produtos/mouse/adder/adderF1.jpeg">
+                    <img src="img/produtos/mouse/adder/adderF1.jpeg" alt="Park" class="card-img-top">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <a class="lightbox" href="img/produtos/mouse/adder/adderF1.jpg">
+                    <img src="img/produtos/mouse/adder/adderF1.jpg" alt="Park" class="card-img-top">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <a class="lightbox" href="img/produtos/mouse/adder/adderF2.jpg">
+                    <img src="img/produtos/mouse/adder/adderF2.jpg" alt="Park" class="card-img-top">
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+  <div class="container-fluid mt-3 bg-razer">
   <div class="row">
   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
    <div class="row">
-    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda mt-2">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda">
 
       <h2>Redes Sociais</h2>
       <ul class="nav flex-column">
@@ -155,7 +245,7 @@
 
       </ul>
     </div>
-    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda mt-2">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda">
      <h2>Patrocinadores</h2>
      <ul class="nav flex-column">
       <li class="nav-item">
@@ -169,7 +259,7 @@
       </li>
     </ul>
   </div>
-  <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda mt-2">
+  <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda">
    <h2>Categorias</h2>
    <ul class="nav flex-column">
     <li class="nav-item">
@@ -186,7 +276,7 @@
     </li>
   </ul>
 </div>
-  <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 roda mt-2">
+  <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 roda">
     <h2>Informações</h2>
     <ul class="nav flex-column">
       <li class="nav-item">
@@ -209,6 +299,16 @@
   <div class="container-fluid" id="final"><div class="row"><div class="col-12 text-center"><p>Copyright © 2018 HeadShot<img src="img/headshot.jpg" style="height: 20px; width: 20px;"/>com   |   Todos direitos Reservados.</p></div></div></div>
 
 
+
+
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -222,8 +322,11 @@ crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script src="headshot.js" type="text/javascript"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
+
 
 </body>
 
 </html>
-

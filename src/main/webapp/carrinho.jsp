@@ -58,11 +58,20 @@
             <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
           </form>
           <div class="registro">
+          <c:if test = "${sessionScope.cliente == null}">
+            <span class="navbar-text">
+              <a class="btn btn-sm btn-outline-secondary" href="login.jsp">Entre <i class="fas fa-user"></i></a>
+            </span>
+                </c:if>
+                
+                   <c:if test = "${sessionScope.cliente != null}">
+                       <p class="btn btn-sm btn-outline-secondary">Bem vindo ${cliente.nomeCliente} <i class="fas fa-user"></i></p>
+            <span class="navbar-text">
+              <a class="btn btn-sm btn-outline-secondary" href="logout">Sair <i class="fas fa-user"></i></a>
+            </span>
+                </c:if>
           <span class="navbar-text">
-            <a href="login.jsp" class="btn btn-sm btn-outline-secondary" type="button">Entre <i class="fas fa-user"></i></a>
-          </span>
-          <span class="navbar-text">
-            <a class="btn btn-sm btn-outline-secondary" href="login.jsp" type="button">Cadastre-se <i class="fas fa-user-plus"></i></a>
+            <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" >Cadastre-se <i class="fas fa-user-plus"></i></a>
           </span>
         </div>
         </div>

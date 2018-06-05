@@ -69,7 +69,7 @@
               <h5><c:out value ="${cliente.ruaCliente}"/></h5>
               <p><c:out value ="${cliente.ruaCliente}, ${cliente.estadoCliente} - CEP: ${cliente.cepCliente}"/></p>
               <span><p><c:out value ="Entregar para: ${cliente.nomeCliente}"/></p></span>
-              <footer><a class="float-right" href="">Enviar para outro endereço</a></footer>
+              <footer><a class="float-right" href="cadastrarEndereco.jsp">Enviar para outro endereço</a></footer>
             </blockquote>
           </div>
           

@@ -36,6 +36,8 @@ public class FinalizarVenda extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
+        
+        if(sessao.getAttribute("carrinho") != null){
         Cliente cliente = (Cliente) sessao.getAttribute("cliente");
         if(sessao.getAttribute("cliente") == null){
              RequestDispatcher dispatcher
@@ -54,6 +56,11 @@ public class FinalizarVenda extends HttpServlet {
                     = request.getRequestDispatcher("/pagamento.jsp");
              dispatcher.forward(request, response);
          
+        }
+        }else{
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/mostrar-carrinho");
+             dispatcher.forward(request, response);
         }
 
         
