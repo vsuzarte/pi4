@@ -37,6 +37,10 @@ public class Compras extends HttpServlet {
         
            HttpSession sessao = request.getSession();
            Cliente cliente = (Cliente) sessao.getAttribute("cliente");
+         if(cliente == null){
+             response.sendRedirect(request.getContextPath() + "/vendas.jsp");
+         }
+           
         try {
             List<Venda> listaCompras = ClienteDAO.listarVendas(cliente);
             sessao.setAttribute("listaCompras", listaCompras);

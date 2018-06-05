@@ -34,6 +34,8 @@ public class Usuario {
         this.disponivel = disponivel;
     }
 
+ 
+
     public int getIdUsuario() {
         return idUsuario;
     }
