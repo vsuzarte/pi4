@@ -55,10 +55,10 @@
               <a class="nav-link" href="vendas.jsp">Suas Compras <i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
-          <form class="form-inline">
-            <input class="form-control" type="search" placeholder="Buscar no site" aria-label="Search">
-            <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
-          </form>
+          <form action="consultar-produto" method="get"class="form-inline">
+              <input class="form-control" type="search" name ="nome" placeholder="Buscar no site." aria-label="Search">
+              <button class="btn btn-sm btn-outline-secondary" type="submit">Buscar <i class="fas fa-search"></i></button>
+            </form>
           <div class="registro">
           <c:if test = "${sessionScope.cliente == null}">
             <span class="navbar-text">
@@ -72,9 +72,11 @@
               <a class="btn btn-sm btn-outline-secondary" href="logout">Sair <i class="fas fa-user"></i></a>
             </span>
                 </c:if>
-          <span class="navbar-text">
-            <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" >Cadastre-se <i class="fas fa-user-plus"></i></a>
-          </span>
+           <c:if test = "${sessionScope.cliente == null}">
+            <span class="navbar-text">
+              <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" t>Cadastre-se <i class="fas fa-user-plus"></i></a>
+            </span>
+                </c:if>
         </div>
         </div>
       </nav>

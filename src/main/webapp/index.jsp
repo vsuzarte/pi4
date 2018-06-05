@@ -68,10 +68,11 @@
               <a class="btn btn-sm btn-outline-secondary" href="logout">Sair <i class="fas fa-user"></i></a>
             </span>
                 </c:if>
-                
+                <c:if test = "${sessionScope.cliente == null}">
             <span class="navbar-text">
               <a class="btn btn-sm btn-outline-secondary" href="cadastroCliente.jsp" t>Cadastre-se <i class="fas fa-user-plus"></i></a>
             </span>
+                </c:if>
           </div>
           </div>
         </nav>
