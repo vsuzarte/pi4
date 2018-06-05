@@ -41,10 +41,10 @@
                 Categorias <i class="fas fa-headphones"></i></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="categoria/headset.html">Headset</button> </a>
-                <a class="dropdown-item" href="mouse.html">Mouse</a>
-                <a class="dropdown-item" href="mousepad.html">Mousepad</a>
-                <a class="dropdown-item" href="teclados.html">Teclados</a>
+               <a class="dropdown-item" href="consultar-produto-categoria?categoria=headset">Headset</button> </a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=mouse">Mouse</a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=mousepad">Mousepad</a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=teclado">Teclados</a>
               </div>
             </li>
             <li class="nav-item">

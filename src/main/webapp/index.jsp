@@ -38,10 +38,10 @@
                   Categorias <i class="fas fa-headphones"></i></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="headset.html">Headset</button> </a>
-                  <a class="dropdown-item" href="mouse.html">Mouse</a>
-                  <a class="dropdown-item" href="mousepad.html">Mousepad</a>
-                  <a class="dropdown-item" href="teclados.html">Teclados</a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=headset">Headset</button> </a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=mouse">Mouse</a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=mousepad">Mousepad</a>
+                  <a class="dropdown-item" href="consultar-produto-categoria?categoria=teclado">Teclados</a>
                 </div>
               </li>
               <li class="nav-item">
@@ -122,19 +122,19 @@
             <h3 class="of">CATEGORIAS</h3>
             <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="categoria/headset.html">Headset</a>
+        <a href="consultar-produto-categoria?categoria=headset">Headset</a>
 
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="mouse.html">Mouse</a>
+        <a href="consultar-produto-categoria?categoria=mouse">Mouse</a>
 
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="mousepad.html">Mousepad</a>
+        <a href="consultar-produto-categoria?categoria=mousepad">Mousepad</a>
 
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="teclados.html">Teclado</a>
+        <a href="consultar-produto-categoria?categoria=teclado">Teclado</a>
 
       </li>
     </ul>

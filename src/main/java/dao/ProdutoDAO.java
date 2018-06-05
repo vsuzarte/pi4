@@ -259,7 +259,84 @@ public class ProdutoDAO {
 
         return listaProdutos;
     }
+ public static List<Produto> procurarProdutoCategoria(String categoria) throws SQLException, Exception {
 
+        String sql = "SELECT * FROM produto WHERE UPPER (categoria) LIKE UPPER (?) AND DISPONIVEL=?";
+
+        //Lista de clientes de resultado
+        List<Produto> listaProdutos = null;
+
+        //connection para abertura e fechamento.
+        Connection connection = null;
+
+        //PreparedStatement para os comandos SQL e fechamento do mesmo.
+        PreparedStatement preparedStatement = null;
+
+        //Armazenará os resultados do banco de dados
+        ResultSet result = null;
+
+        try {
+
+            //chama a classe criada ConnectionUtils.
+            //abre a conexão com o banco de dados.
+            connection = ConnectionUtils.getConnection();
+
+            //cria um statement para execução de instruções SQL.
+            preparedStatement = connection.prepareStatement(sql);
+
+            //Configura os parâmetros do PreparedSatamente.
+            //cada preparedStatement ira ocupar a interrogação na instrução SQL.
+            preparedStatement.setString(1, "%" + categoria + "%");
+            preparedStatement.setBoolean(2, true);
+
+            //Executa a consulta SQL no banco de dados
+            result = preparedStatement.executeQuery();
+
+            //While passa por cada item (linha) do resultado
+            while (result.next()) {
+
+                //Se a lista não foi inicializada, a inicializa
+                if (listaProdutos == null) {
+                    listaProdutos = new ArrayList<Produto>();
+                }
+
+                
+                int idProduto = result.getInt("idProduto");
+                String nomeProduto = result.getString("nomeProduto");
+                String descricao = result.getString("descricao");
+                String c1 = result.getString("c1");
+                String c2 = result.getString("c2");
+                String c3 = result.getString("c3");
+                String c4 = result.getString("c4");
+                String c5 = result.getString("c5");
+                String c6 = result.getString("c6");
+                double valorProduto = result.getDouble("valorProduto");
+                String img = result.getString("img");
+
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
+
+                produto.setIdProduto(idProduto);
+                listaProdutos.add(produto);
+            }
+
+        } finally {
+
+            if (result != null && !result.isClosed()) {
+                result.close();
+            }
+
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+
+        }
+
+        return listaProdutos;
+    }
     public static void atualizarProduto(Produto produto) throws SQLException, Exception {
 
         String sql = "UPDATE produto SET nomeProduto=?, c1=?,c2=?,c3=?,c4=?,c5=?,c6=?,  "
