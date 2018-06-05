@@ -84,18 +84,19 @@
     <div class="col-12">
     <div class="card card-compras">
   <div class="card-header">
+     <c:forEach items="${listaCompras}" var="produto">
     <div class="row">
         <div class="col-md-3">
           <h3>Número Pedido</h3>
-          <b><c:out value="${ultimaVenda.id}"/></b>
+          <b>${produto.id}</b>
         </div>
         <div class="col-md-3">
           <h3>Pagamento</h3>
-          <b><c:out value="R$ ${ultimaVenda.valor}  -  cartão: ${ultimaVenda.cartao}"/></b>
+          <b>${produto.cartao}</b>
         </div>
         <div class="col-md-3">
           <h3>Status Pedido</h3>
-          <b><c:out value="${ultimaVenda.status}"/></b>
+          <b>${produto.status}</b>
         </div>
         <div class="col-md-3">
           <h3>Previsão de entrega</h3>
@@ -103,7 +104,7 @@
         </div>
     </div>
 
-
+     </c:forEach>
   </div>
 
  

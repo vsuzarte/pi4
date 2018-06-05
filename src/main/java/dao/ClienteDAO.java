@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import model.Venda;
 
 /**
  *
@@ -224,5 +225,64 @@ public class ClienteDAO {
         }
 
     }
-    
+     
+     public static List<Venda> listarVendas(Cliente cliente) throws SQLException, Exception {
+
+        String sql = "SELECT * FROM venda WHERE IDCLIENTE=?";
+
+        List<Venda> listaVendas = null;
+
+        Connection connection = null;
+
+        PreparedStatement preparedStatement = null;
+
+        ResultSet result = null;
+
+        try {
+
+            connection = ConnectionUtils.getConnection();
+
+            preparedStatement = connection.prepareCall(sql);
+
+            preparedStatement.setInt(1, cliente.getIdCliente() );
+
+            result = preparedStatement.executeQuery();
+
+            while (result.next()) {
+                if (listaVendas == null) {
+                    listaVendas = new ArrayList<Venda>();
+                }
+               
+
+                int idVenda = result.getInt("idVenda");
+                int idCliente = result.getInt("idCliente");
+                Double valorTotal = result.getDouble("valorTotal");
+                String cartao = result.getString("cartao");
+                String status = result.getString("status");
+
+                Venda venda = new Venda( idCliente,  valorTotal,  cartao , status);
+                venda.setId(idVenda);
+                
+               
+                listaVendas.add(venda);
+                
+                
+            }
+            
+
+        } finally {
+
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            //Se a conexão ainda estiver aberta, realiza seu fechamento.
+            if (connection != null && !connection.isClosed()) {
+                connection.isClosed();
+            }
+
+        }
+
+        return listaVendas;
+    }
 }

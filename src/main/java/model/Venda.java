@@ -39,6 +39,7 @@ public class Venda {
         this.idCliente = idCliente;
         this.cartao = cartao;
         this.valor = valor;
+        this.status = status;
     }
     
     
