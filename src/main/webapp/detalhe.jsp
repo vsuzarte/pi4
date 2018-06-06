@@ -89,9 +89,9 @@
   <div class="container-fluid mt-3 mb-3 bg-razer">
 
 <div class="row">
-    "
     
-<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"" text-center">
+    
+<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
 
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><img class="img-show" src='<c:url value="${detalhe.img}"/>'></div>
@@ -118,7 +118,6 @@
   <h1><c:out value="${detalhe.nomeProduto}"/></h1>
   <p><c:out value="${detalhe.descricao}"/></p>
   <span class="mb-2" id="span-prec">R$ <c:out value="${detalhe.valorProduto}"/></span></br>
-  <span class="mb-2"><i class="fas fa-credit-card"> </i> 1x de R$ <c:out value="${detalhe.valorProduto}"/></span><br/>
   <span class="mb-2" id="span-frete"><i class="fas fa-truck"></i> Frete grátis para todo o país</span></br>
   <span class="mb-2"><i class="fas fa-reply"></i> Devolução grátis por 0 dias </span><br/>
 
@@ -156,11 +155,11 @@
 
   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
     <ul>
-      <li class="mb-3"><strong>Marca:</strong><br/>
+      <li class="mb-3"><strong></strong><br/>
         <span class="p-desc"><c:out value="${detalhe.c1}"/></span></li>
-        <li class="mb-3"><strong>Modelo:</strong><br/>
+        <li class="mb-3"><strong></strong><br/>
           <span class="p-desc"><c:out value="${detalhe.c2}"/></span></li>
-          <li class="mb-3"><strong>Material:</strong><br/>
+          <li class="mb-3"><strong></strong><br/>
             <span class="p-desc"><c:out value="${detalhe.c3}"/></span></li>
     </ul>
 
@@ -168,11 +167,11 @@
 
   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
     <ul>
-      <li class="mb-3"><strong>Largura:</strong><br/>
+      <li class="mb-3"><strong></strong><br/>
         <span class="p-desc"><c:out value="${detalhe.c4}"/></span></li>
-        <li class="mb-3"><strong>Comprimento:</strong><br/>
+        <li class="mb-3"><strong></strong><br/>
           <span class="p-desc"><c:out value="${detalhe.c5}"/></span></li>
-          <li class="mb-3"><strong>Espessura:</strong><br/>
+          <li class="mb-3"><strong></strong><br/>
             <span class="p-desc"><c:out value="${detalhe.c6}"/></span></li>
     </ul>
 

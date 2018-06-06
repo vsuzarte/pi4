@@ -193,4 +193,58 @@ public class VendaDAO {
 
         return listaVendas;
     }
+        
+     public static void alterarStatus(int id, String status) throws SQLException, Exception {
+
+        //Monta a string com o comando SQL para atualizar dados na tabela cliente
+        //ultilizando os dados do cliente passado por parâmetro.
+        //A String ira ser ultilizada pelo prepared statement
+        String sql = "UPDATE venda SET  status=? "
+                + "WHERE (idVenda=?)";
+
+        //connection para abertura e fechamento.
+        Connection connection = null;
+
+        //PreparedStatement para os comandos SQL e fechamento do mesmo.
+        PreparedStatement preparedStatement = null;
+
+        try {
+
+            ////chama a classe criada ConnectionUtils.
+            //abre a conexão com o banco de dados.
+            connection = ConnectionUtils.getConnection();
+
+            //cria um statement para execução de instruções SQL.
+            preparedStatement = connection.prepareStatement(sql);
+
+            //Configura os parâmetros do PreparedSatamente
+            //cada preparedStatement ira ocupar uma interrogação na instrução SQL
+            //que foi digitada acima, trocando seus valores pelo obtido do Cliente.
+            preparedStatement.setString(1, status);
+
+            preparedStatement.setInt(2, id);
+
+
+         
+
+           
+
+            //Exucuta o comando do banco de dados.
+            preparedStatement.execute();
+
+        } finally {
+
+            //Se o statement ainda estiver aberto, realiza seu fechamento. 
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            //Se a conexão ainda estiver aberta, realiza seu fechamento.
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+
+        }
+
+    }
 }

@@ -52,7 +52,7 @@
               <a class="nav-link" href="mostrar-carrinho">Seu Carrinho <i class="fas fa-shopping-cart"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vendas.jsp">Suas Compras <i class="fas fa-shopping-bag"></i></a>
+              <a class="nav-link" href="mostrar-compras">Suas Compras <i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
           <form action="consultar-produto" method="get"class="form-inline">

@@ -61,7 +61,7 @@ public class FinalizarVendaPagamento extends HttpServlet {
             try {
                 Venda venda = VendaDAO.realizarVenda(cliente.getIdCliente(), total, cartao);
                 venda.setStatus("pendente");
-                            sessao.setAttribute("ultimaVenda", venda);
+                           
 
                 for(int i = 0; i < carrinho.size(); i++){
                     
@@ -77,7 +77,7 @@ public class FinalizarVendaPagamento extends HttpServlet {
             carrinho = null;
             sessao.setAttribute("carrinho", carrinho);
              RequestDispatcher dispatcher
-                    = request.getRequestDispatcher("/vendas.jsp");
+                    = request.getRequestDispatcher("/mostrar-compras");
              dispatcher.forward(request, response);
           
         }

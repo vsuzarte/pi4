@@ -54,16 +54,17 @@
                     <tbody>
                          <c:forEach items="${listaVendaBack}" var="venda" >
                         <tr>
-                            <th>${venda.id}</th>
+                            <th name ="id" value="${venda.id}">${venda.id}</th>
                             <td>${venda.idCliente}</td>
                             <td>${venda.valor}</td>
                             <td>
-                                <form>
-                                    <select>
-                                    <option value="pendente">Pendente</option>
-                                    <option value="aprovado">Aprovado</option>
-                                    <option value="encaminhado">Encaminhando</option>
-                                    <option value="entregue">Entregue</option>
+                                <form action ="alterar-status-venda?id=${venda.id} " method="post" >
+                                    <select name ="status" >
+                                    <option value="${venda.status}">${venda.status}</option>
+                                    <option name="status" value="pendente" >Pendente</option>
+                                    <option name="status" value="aprovado">Aprovado</option>
+                                    <option name="status" value="encaminhado">Encaminhando</option>
+                                    <option name="status" value="entregue">Entregue</option>
                                 </select>
                                     <button class="but-compra" type="submit">Alterar</button>
                                 </form>
