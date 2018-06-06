@@ -113,11 +113,20 @@
           <h3>Status Pedido</h3>
           <b>${produto.status}</b>
         </div>
+        </div>
+
+        
+         </div>
+        
           <c:forEach items="${produto.listaProdutos}" var="produto2" >
+              
+              <div class="card-header">
+              <div class="row">
               <div class="col-md-3">
-          <h3>Produto</h3>
+          <h3>${produto2.nome}</h3>
+          
           <img src='<c:url value="${produto2.img}"/>' style="height: 100px; width: 100px;" alt="Mouse deathAdder" class="img-responsive"/>
-          <b>${produto2.nome}</b>
+          
         </div>
         <div class="col-md-3">
           <h3>Quantidade</h3>
@@ -131,12 +140,14 @@
           <h3>Valor</h3>
           <b>${produto2.valor}</b>
         </div>
-        
+        </div>
+         </div>
+      
           </c:forEach>
-    </div>
+    
 
     
-  </div>
+ 
 
  
 
@@ -144,6 +155,11 @@
   
   </div>
   </div>
+            <div>
+         
+            <p></p>
+            </div>
+        
  </c:forEach>
 
 
