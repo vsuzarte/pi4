@@ -84,5 +84,5 @@ INSERT INTO USUARIO(NOMEUSUARIO,FUNCAO,USERNAME,SENHA,DISPONIVEL) VALUES ('ADMIN
 
 INSERT INTO CLIENTE(nomeCliente,emailCliente,senhaCliente,cepCliente,estadoCliente,ruaCliente,numCasa,complemento,bairro,nomeContato,telefoneCliente,disponivel) VALUES ('Gabriel', 'gabriel@hotmail.com','123','05831120','SP','Rua akidaban','666','K','haha','ha','454545',TRUE);
  
-
+INSERT INTO PRODUTO(NOMEPRODUTO,DESCRICAO,VALORPRODUTO,C1,C2,C3,C4,C5,C6,CATEGORIA,IMG,IMGV1,IMGV2,IMGV3,IMGC1,IMGC2,IMGC3,DISPONIVEL) VALUES ('Manba','O Razer Mamba oferece movimento completamente irrestrito sem comprometer o controle ou a precisÃ£o. Com ou sem fio, o Razer Mamba oferece uma taxa de resposta de 1 ms *',300,'Melhor mouse do mercado','Sensor laser de 16.000 DPI 5G','Tecnologia de força de clique ajustável','Tecnologia de cabeamento duplo com tecnologia de jogos / sem fio', 'Design ergonÃ´mico para destro com garras laterais de borracha texturizada', 'IluminaÃ§Ã£o cromÃ¡tica com verdadeiras 16,8 milhÃµes de opÃ§Ãµes de cores personalizÃ¡veis', 'Mouse','img/manba/img.png','img/manba/imgV1.png','img/manba/imgV2.png','img/manba/imgV3.png','img/manba/imgC1.jpg','img/manba/imgC2.jpg','img/manba/imgC1.jpg',TRUE )
 
