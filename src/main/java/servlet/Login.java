@@ -46,7 +46,7 @@ public class Login extends HttpServlet {
         
 
         if (cliente == null || !senha.equals(cliente.getSenhaCliente())) {
-            request.setAttribute("mensagemErro", "Usuário ou senha inválido");
+            request.setAttribute("mensagem", "Usuário ou senha inválido");
             RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/login.jsp");
             dispatcher.forward(request, response);

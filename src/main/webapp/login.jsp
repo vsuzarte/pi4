@@ -25,7 +25,6 @@
 
 <body class="text-center">
 
-
   <form action="${pageContext.request.contextPath}/login" method="post" class="form-signin">
         <img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Entrar</h1>
@@ -35,6 +34,13 @@
         <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
         <div class="checkbox mb-3">
         </div>
+            <c:if test="${not empty mensagem}">
+<div class="alert alert-secondary" role="alert" id="respostaErro">
+        
+            <alert><c:out value="${mensagem}" /></alert>
+            
+    </div>
+</c:if> 
         <button class="btn btn-lg btn-block but mb-3" type="submit">Continuar</button>
         <a href="cadastroCliente.jsp" class="text-muted">Criar conta</a>
         <p class="mt-5 mb-3 text-muted">&copy; 2018 HeadShot.com</p>
