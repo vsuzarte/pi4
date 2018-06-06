@@ -16,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import model.ItemVenda;
+import model.Produto;
 import model.Venda;
 
 /**
@@ -49,12 +51,12 @@ public class ClienteDAO {
             stmt.setBoolean(4, true);
 
             stmt.execute();
-            
+
             final ResultSet rs = stmt.getGeneratedKeys();
             if (rs.next()) {
                 final int lastId = rs.getInt(1);
                 cliente.setIdCliente(lastId);
-                
+
             }
 
         } finally {
@@ -117,7 +119,7 @@ public class ClienteDAO {
                 String bairro = result.getString("bairro");
                 String nomeContato = result.getString("nomeContato");
                 int idCliente = result.getInt("idCliente");
-              
+
                 cliente.setBairro(bairro);
                 cliente.setCepCliente(cepCliente);
                 cliente.setCidadeCliente(cidadeCliente);
@@ -131,9 +133,6 @@ public class ClienteDAO {
                 cliente.setSenhaCliente(senhaCliente);
                 cliente.setTelefoneCliente(telefoneCliente);
                 cliente.setIdCliente(idCliente);
-                
-                
-             
 
                 return cliente;
 
@@ -163,7 +162,7 @@ public class ClienteDAO {
         return null;
     }
 
-     public static void cadastrarEndereco(Cliente cliente) throws SQLException, Exception {
+    public static void cadastrarEndereco(Cliente cliente) throws SQLException, Exception {
 
         //Monta a string com o comando SQL para atualizar dados na tabela cliente
         //ultilizando os dados do cliente passado por parâmetro.
@@ -193,8 +192,6 @@ public class ClienteDAO {
 
             preparedStatement.setString(2, cliente.getEstadoCliente());
 
-         
-
             preparedStatement.setString(3, cliente.getCidadeCliente());
 
             preparedStatement.setString(4, cliente.getRuaCliente());
@@ -204,7 +201,7 @@ public class ClienteDAO {
             preparedStatement.setString(6, cliente.getComplemento());
 
             preparedStatement.setString(7, cliente.getBairro());
-            
+
             preparedStatement.setInt(8, cliente.getIdCliente());
 
             //Exucuta o comando do banco de dados.
@@ -225,8 +222,8 @@ public class ClienteDAO {
         }
 
     }
-     
-     public static List<Venda> listarVendas(Cliente cliente) throws SQLException, Exception {
+
+    public static List<Venda> listarVendas(Cliente cliente) throws SQLException, Exception {
 
         String sql = "SELECT * FROM venda WHERE IDCLIENTE=?";
 
@@ -244,7 +241,7 @@ public class ClienteDAO {
 
             preparedStatement = connection.prepareCall(sql);
 
-            preparedStatement.setInt(1, cliente.getIdCliente() );
+            preparedStatement.setInt(1, cliente.getIdCliente());
 
             result = preparedStatement.executeQuery();
 
@@ -252,7 +249,6 @@ public class ClienteDAO {
                 if (listaVendas == null) {
                     listaVendas = new ArrayList<Venda>();
                 }
-               
 
                 int idVenda = result.getInt("idVenda");
                 int idCliente = result.getInt("idCliente");
@@ -260,15 +256,15 @@ public class ClienteDAO {
                 String cartao = result.getString("cartao");
                 String status = result.getString("status");
 
-                Venda venda = new Venda( idCliente,  valorTotal,  cartao , status);
+                Venda venda = new Venda(idCliente, valorTotal, cartao, status);
+
                 venda.setId(idVenda);
-                
-               
+
+                venda.setListaProdutos(listarItemVenda(venda));
+
                 listaVendas.add(venda);
-                
-                
+
             }
-            
 
         } finally {
 
@@ -285,8 +281,69 @@ public class ClienteDAO {
 
         return listaVendas;
     }
-     
-      public static Cliente procurarCliente(String nome) throws SQLException, Exception {
+
+    public static List<ItemVenda> listarItemVenda(Venda venda) throws SQLException, Exception {
+
+        String sql = "SELECT * FROM itemVenda WHERE idVenda=?";
+
+        List<ItemVenda> listaVendas = null;
+
+        Connection connection = null;
+
+        PreparedStatement preparedStatement = null;
+
+        ResultSet result = null;
+
+        try {
+
+            connection = ConnectionUtils.getConnection();
+
+            preparedStatement = connection.prepareCall(sql);
+
+            preparedStatement.setInt(1, venda.getId());
+
+            result = preparedStatement.executeQuery();
+
+            while (result.next()) {
+                if (listaVendas == null) {
+                    listaVendas = new ArrayList<ItemVenda>();
+                }
+
+                int idItemVenda = result.getInt("idItemVenda");
+                int idVenda = result.getInt("idVenda");
+                int idProduto = result.getInt("idProduto");
+                int quantidade = result.getInt("quantidade");
+                
+                ItemVenda itemVenda = new ItemVenda(idItemVenda,quantidade,idProduto);
+                
+                Produto produto = ProdutoDAO.obterProduto(idProduto);
+                
+                itemVenda.setNome(produto.getNomeProduto());
+                itemVenda.setImg(produto.getImg());
+                itemVenda.setPreco(produto.getValorProduto());
+                
+                
+                listaVendas.add(itemVenda);
+
+            }
+
+        } finally {
+
+            if (preparedStatement != null && !preparedStatement.isClosed()) {
+                preparedStatement.close();
+            }
+
+            //Se a conexão ainda estiver aberta, realiza seu fechamento.
+            if (connection != null && !connection.isClosed()) {
+                connection.isClosed();
+            }
+
+        }
+
+        return listaVendas;
+    }
+
+    public static Cliente procurarCliente(String nome) throws SQLException, Exception {
         String sql = "SELECT * FROM Cliente WHERE UPPER (NOMECLIENTE) LIKE UPPER (?) AND Disponivel = true ";
         //connection para abertura e fechamento.
         Connection connection = null;
@@ -331,7 +388,7 @@ public class ClienteDAO {
                 String bairro = result.getString("bairro");
                 String nomeContato = result.getString("nomeContato");
                 int idCliente = result.getInt("idCliente");
-              
+
                 cliente.setBairro(bairro);
                 cliente.setCepCliente(cepCliente);
                 cliente.setCidadeCliente(cidadeCliente);
@@ -345,9 +402,6 @@ public class ClienteDAO {
                 cliente.setSenhaCliente(senhaCliente);
                 cliente.setTelefoneCliente(telefoneCliente);
                 cliente.setIdCliente(idCliente);
-                
-                
-             
 
                 return cliente;
 
@@ -376,5 +430,5 @@ public class ClienteDAO {
 
         return null;
     }
-     
+
 }

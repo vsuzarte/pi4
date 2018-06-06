@@ -91,15 +91,19 @@
   <div class="row">
 
     <h1>Histórico de compras</h1>
-
+ <c:forEach items="${listaCompras}" var="produto">
     <div class="col-12">
     <div class="card card-compras">
   <div class="card-header">
-     <c:forEach items="${listaCompras}" var="produto">
+     
     <div class="row">
         <div class="col-md-3">
           <h3>Número Pedido</h3>
           <b>${produto.id}</b>
+        </div>
+        <div class="col-md-3">
+          <h3>Valor</h3>
+          <b>R$ ${produto.valor}</b>
         </div>
         <div class="col-md-3">
           <h3>Pagamento</h3>
@@ -109,13 +113,29 @@
           <h3>Status Pedido</h3>
           <b>${produto.status}</b>
         </div>
-        <div class="col-md-3">
-          <h3>Previsão de entrega</h3>
-          <b>30/06/2018</b>
+          <c:forEach items="${produto.listaProdutos}" var="produto2" >
+              <div class="col-md-3">
+          <h3>Produto</h3>
+          <img src='<c:url value="${produto2.img}"/>' style="height: 100px; width: 100px;" alt="Mouse deathAdder" class="img-responsive"/>
+          <b>${produto2.nome}</b>
         </div>
+        <div class="col-md-3">
+          <h3>Quantidade</h3>
+          <b>${produto2.qtde}</b>
+        </div>
+        <div class="col-md-3">
+          <h3>Preço unitario</h3>
+          <b>${produto2.preco}</b>
+        </div>
+        <div class="col-md-3">
+          <h3>Valor</h3>
+          <b>${produto2.valor}</b>
+        </div>
+        
+          </c:forEach>
     </div>
 
-     </c:forEach>
+    
   </div>
 
  
@@ -124,7 +144,7 @@
   
   </div>
   </div>
-
+ </c:forEach>
 
 
   </div>

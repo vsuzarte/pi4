@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.List;
+
 
 /**
  *
@@ -18,6 +20,15 @@ public class Venda {
     private float total;
     private String cartao;
     private String status;
+    private List<ItemVenda> listaProdutos;
+
+    public List<ItemVenda> getListaProdutos() {
+        return listaProdutos;
+    }
+
+    public void setListaProdutos(List<ItemVenda> listaProdutos) {
+        this.listaProdutos = listaProdutos;
+    }
 
     public String getCartao() {
         return cartao;

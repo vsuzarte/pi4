@@ -42,6 +42,12 @@ public class ItemVenda {
         this.imgC2 = imgC2;
         this.imgC3 = imgC3;
     }
+
+    public ItemVenda(int id, int qtde, int idProduto) {
+        this.id = id;
+        this.qtde = qtde;
+        this.idProduto = idProduto;
+    }
     
     
 
