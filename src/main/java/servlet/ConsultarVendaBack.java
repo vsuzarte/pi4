@@ -33,6 +33,12 @@ public class ConsultarVendaBack extends HttpServlet {
             throws ServletException, IOException {
 
          HttpSession sessao = request.getSession();
+         
+        if(sessao.getAttribute("usuario") == null){
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/loginBack.jsp");
+            dispatcher.forward(request, response);
+        }
         try {
 
             String nome = request.getParameter("nome");
@@ -63,8 +69,15 @@ public class ConsultarVendaBack extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+         HttpSession sessao = request.getSession();
+        if(sessao.getAttribute("usuario") == null){
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/loginBack.jsp");
+            dispatcher.forward(request, response);
+        }
 
-        HttpSession sessao = request.getSession();
+        
         try {
 
             String nome = request.getParameter("nome");

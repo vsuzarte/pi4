@@ -33,8 +33,12 @@ public class CadastroProduto extends HttpServlet {
 
         String destino;
 
-        HttpSession sessao = request.getSession();
-
+ HttpSession sessao = request.getSession();
+        if(sessao.getAttribute("usuario") == null){
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/loginBack.jsp");
+            dispatcher.forward(request, response);
+        }
         if (sessao.getAttribute("produto") != null) {
 
             request.setAttribute("mensagem", "Produto cadastrado ! ");
@@ -57,7 +61,12 @@ public class CadastroProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      HttpSession sessao = request.getSession();
+         HttpSession sessao = request.getSession();
+        if(sessao.getAttribute("usuario") == null){
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/loginBack.jsp");
+            dispatcher.forward(request, response);
+        }
       if(sessao.getAttribute("usuario") != null){
         String nomeProduto = request.getParameter("nomeProduto");
         String descricao = request.getParameter("descricao");

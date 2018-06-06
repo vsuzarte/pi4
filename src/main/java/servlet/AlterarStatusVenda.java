@@ -34,6 +34,13 @@ public class AlterarStatusVenda extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         HttpSession sessao = request.getSession();
+        if(sessao.getAttribute("usuario") == null){
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/loginBack.jsp");
+            dispatcher.forward(request, response);
+        }
+        
 
 
     }
@@ -41,6 +48,12 @@ public class AlterarStatusVenda extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession sessao = request.getSession();
+        if(sessao.getAttribute("usuario") == null){
+            RequestDispatcher dispatcher
+                    = request.getRequestDispatcher("/loginBack.jsp");
+            dispatcher.forward(request, response);
+        }
         
   int id = Integer.parseInt(request.getParameter("id"));
         String status = request.getParameter("status");
