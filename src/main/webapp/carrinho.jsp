@@ -179,18 +179,18 @@
   <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center roda mt-2">
    <h2>Categorias</h2>
    <ul class="nav flex-column">
-    <li class="nav-item">
-      <a class="nav-link" href="categoria/headset.html">Headset</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="mouse.html">Mouse</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="mousepad.html">Mousepad</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="teclados.html">Teclado</a>
-    </li>
+     <li class="nav-item">
+        <a class="nav-link" href="consultar-produto-categoria?categoria=headset">Headset</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="consultar-produto-categoria?categoria=mouse">Mouse</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="consultar-produto-categoria?categoria=mousepad">Mousepad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="consultar-produto-categoria?categoria=teclado">Teclado</a>
+      </li>
   </ul>
 </div>
   <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 roda mt-2">

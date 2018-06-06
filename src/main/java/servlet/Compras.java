@@ -38,7 +38,7 @@ public class Compras extends HttpServlet {
            HttpSession sessao = request.getSession();
            Cliente cliente = (Cliente) sessao.getAttribute("cliente");
          if(cliente == null){
-             response.sendRedirect(request.getContextPath() + "/vendas.jsp");
+             response.sendRedirect(request.getContextPath() + "/login.jsp");
          }
            
         try {
@@ -57,16 +57,7 @@ public class Compras extends HttpServlet {
             throws ServletException, IOException {
 HttpSession sessao = request.getSession();
            
-           
-        try {
-
-            List<Produto> carrinho = (List<Produto>) sessao.getAttribute("carrinho");
-            
-            response.sendRedirect(request.getContextPath() + "/carrinho.jsp");
-        } catch (Exception e) {
-            response.sendRedirect(request.getContextPath() + "/carrinho.jsp");
-            
-        }
+     
 
     }
 
