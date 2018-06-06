@@ -33,12 +33,14 @@ public class CadastroProduto extends HttpServlet {
 
         String destino;
 
- HttpSession sessao = request.getSession();
+        HttpSession sessao = request.getSession();
+        
         if(sessao.getAttribute("usuario") == null){
-            RequestDispatcher dispatcher
+             RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/loginBack.jsp");
             dispatcher.forward(request, response);
         }
+
         if (sessao.getAttribute("produto") != null) {
 
             request.setAttribute("mensagem", "Produto cadastrado ! ");
@@ -61,9 +63,9 @@ public class CadastroProduto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         HttpSession sessao = request.getSession();
-        if(sessao.getAttribute("usuario") == null){
-            RequestDispatcher dispatcher
+      HttpSession sessao = request.getSession();
+       if(sessao.getAttribute("usuario") == null){
+             RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/loginBack.jsp");
             dispatcher.forward(request, response);
         }
@@ -79,8 +81,14 @@ public class CadastroProduto extends HttpServlet {
         String categoria = request.getParameter("categoria");
         double valorProduto = Double.parseDouble(request.getParameter("valorProduto"));
         String img = request.getParameter("img");
+        String imgV1 = request.getParameter("imgV1");
+        String imgV2 = request.getParameter("imgV2");
+        String imgV3 = request.getParameter("imgV3");
+        String imgC1 = request.getParameter("imgC1");
+        String imgC2 = request.getParameter("imgC2");
+        String imgC3 = request.getParameter("imgC3");
 
-        Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1, c2, c3, c4, c5, c6, categoria, img);
+        Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1, c2, c3, c4, c5, c6, categoria, img, imgV1,imgV2,imgV3,imgC1,imgC2,imgC3);
 
             try {
                 ProdutoDAO.inserirProduto(produto);

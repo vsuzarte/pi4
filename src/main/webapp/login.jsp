@@ -35,7 +35,7 @@
         <div class="checkbox mb-3">
         </div>
             <c:if test="${not empty mensagem}">
-<div class="alert alert-secondary" role="alert" id="respostaErro">
+<div class="alert alert-danger" role="alert" id="respostaErro">
         
             <alert><c:out value="${mensagem}" /></alert>
             

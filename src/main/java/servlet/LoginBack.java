@@ -48,7 +48,7 @@ public class LoginBack extends HttpServlet {
         
 
         if (usuario == null || !senha.equals(usuario.getSenha())) {
-            request.setAttribute("mensagemErro", "Usuário ou senha inválido");
+            request.setAttribute("mensagem", "Usuário ou senha inválido");
             RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/loginBack.jsp");
             dispatcher.forward(request, response);

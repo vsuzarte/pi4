@@ -21,6 +21,12 @@
         c6 VARCHAR(255),
         categoria VARCHAR(255),
         img VARCHAR(255),
+        imgV1 VARCHAR(255),
+        imgV2 VARCHAR(255),
+        imgV3 VARCHAR(255),
+        imgC1 VARCHAR(255),
+        imgC2 VARCHAR(255),
+        imgC3 VARCHAR(255),
         disponivel BOOLEAN
        
 );

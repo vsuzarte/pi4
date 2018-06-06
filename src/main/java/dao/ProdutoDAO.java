@@ -27,8 +27,8 @@ public class ProdutoDAO {
 
         Connection conn = null;
 
-        String sql = "INSERT INTO Produto(c1,c2,c3,c4,c5,c6,descricao, nomeProduto, valorProduto, categoria, img, disponivel)"
-                + "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?, ?)";
+        String sql = "INSERT INTO Produto(c1,c2,c3,c4,c5,c6,descricao, nomeProduto, valorProduto, categoria, img, imgV1, imgV2, imgV3,imgC1,imgC2,imgC3, disponivel)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?, ?, ? , ?, ?,?,?,?)";
 
         PreparedStatement stmt = null;
 
@@ -59,7 +59,19 @@ public class ProdutoDAO {
             
             stmt.setString(11, produto.getImg());
             
-            stmt.setBoolean(12, true);
+            stmt.setString(12, produto.getImgV1());
+            
+            stmt.setString(13, produto.getImgV2());
+            
+            stmt.setString(14, produto.getImgV3());
+            
+            stmt.setString(15, produto.getImgC1());
+            
+            stmt.setString(16, produto.getImgC2());
+            
+            stmt.setString(17, produto.getImgC3());
+            
+            stmt.setBoolean(18, true);
 
             stmt.execute();
 
@@ -120,10 +132,15 @@ public class ProdutoDAO {
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
                 String img = result.getString("img");
-                
+                String imgV1 = result.getString("imgV1");
+                String imgV2 = result.getString("imgV2");
+                String imgV3 = result.getString("imgV3");
+                String imgC1 = result.getString("imgC1");
+                String imgC2 = result.getString("imgC2");
+                String imgC3 = result.getString("imgC3");
 
 
-                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img, imgV1,imgV2,imgV3,imgC1,imgC2,imgC3);
                 produto.setIdProduto(idProduto);
                 
                 listaProdutos.add(produto);
@@ -234,8 +251,14 @@ public class ProdutoDAO {
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
                 String img = result.getString("img");
+                String imgV1 = result.getString("imgV1");
+                String imgV2 = result.getString("imgV2");
+                String imgV3 = result.getString("imgV3");
+                String imgC1 = result.getString("imgC1");
+                String imgC2 = result.getString("imgC2");
+                String imgC3 = result.getString("imgC3");
 
-                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img, imgV1, imgV2, imgV3, imgC1,imgC2,imgC3);
 
                 produto.setIdProduto(idProduto);
                 listaProdutos.add(produto);
@@ -312,8 +335,15 @@ public class ProdutoDAO {
                 String c6 = result.getString("c6");
                 double valorProduto = result.getDouble("valorProduto");
                 String img = result.getString("img");
+                String imgV1 = result.getString("imgV1");
+                String imgV2 = result.getString("imgV2");
+                String imgV3 = result.getString("imgV3");
+                String imgC1 = result.getString("imgC1");
+                String imgC2 = result.getString("imgC2");
+                String imgC3 = result.getString("imgC3");
 
-                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
+              
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img, imgV1, imgV2, imgV3, imgC1,imgC2,imgC3);
 
                 produto.setIdProduto(idProduto);
                 listaProdutos.add(produto);
@@ -380,8 +410,20 @@ public class ProdutoDAO {
             preparedStatement.setDouble(9, produto.getValorProduto());
             
             preparedStatement.setString(10, produto.getImg());
+            
+              preparedStatement.setString(11, produto.getImgV1());
+            
+            preparedStatement.setString(12, produto.getImgV2());
+            
+            preparedStatement.setString(13, produto.getImgV3());
+            
+            preparedStatement.setString(14, produto.getImgC1());
+            
+            preparedStatement.setString(15, produto.getImgC2());
+            
+            preparedStatement.setString(16, produto.getImgC3());
 
-            preparedStatement.setInt(11, produto.getIdProduto());
+            preparedStatement.setInt(17, produto.getIdProduto());
 
             //Exucuta o comando do banco de dados.
             preparedStatement.execute();
@@ -452,9 +494,15 @@ public class ProdutoDAO {
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
                 String img = result.getString("img");
+                String imgV1 = result.getString("imgV1");
+                String imgV2 = result.getString("imgV2");
+                String imgV3 = result.getString("imgV3");
+                String imgC1 = result.getString("imgC1");
+                String imgC2 = result.getString("imgC2");
+                String imgC3 = result.getString("imgC3");
 
-
-                Produto produto = new Produto(idProduto,nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
+ 
+                Produto produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img, imgV1, imgV2, imgV3, imgC1,imgC2,imgC3);
 
                 //Retorna o resultado
                 return produto;
@@ -541,8 +589,16 @@ public class ProdutoDAO {
                 String categoria = result.getString("categoria");
                 double valorProduto = result.getDouble("valorProduto");
                 String img = result.getString("img");
+                String imgV1 = result.getString("imgV1");
+                String imgV2 = result.getString("imgV2");
+                String imgV3 = result.getString("imgV3");
+                String imgC1 = result.getString("imgC1");
+                String imgC2 = result.getString("imgC2");
+                String imgC3 = result.getString("imgC3");
 
-               produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img);
+                
+
+               produto = new Produto(nomeProduto, descricao, valorProduto, c1,c2,c3,c4,c5,c6, categoria, img, imgV1, imgV2, imgV3, imgC1,imgC2,imgC3);
 produto.setIdProduto(idProduto);
                 return produto;
               

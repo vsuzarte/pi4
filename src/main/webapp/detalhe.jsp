@@ -94,21 +94,21 @@
 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
 
 <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><img class="img-show" src='<c:url value="${detalhe.img}"/>'></div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><img class="img-show" src="img/produtos/mouse/adder/adderG1.jpg"></div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><img class="img-show" src="img/produtos/mouse/adder/adderG1.jpg"></div>
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><img class="img-show" src='<c:url value="${detalhe.imgV1}"/>' style="height: 320px; width: 320px;"></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><img class="img-show" src='<c:url value="${detalhe.imgV2}"/>' style="height: 320px; width: 320px;"></div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><img class="img-show" src='<c:url value="${detalhe.imgV3}"/>' style="height: 320px; width: 320px;"></div>
 </div>
 
 <div class="text-center">
 <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
 <li class="nav-item">
-<a class="nav-link active ml-3" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><img class="img-view" src="img/produtos/mouse/adder/adderP1.png"></a>
+<a class="nav-link active ml-3" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><img class="img-show" src='<c:url value="${detalhe.imgV1}"/>' style="height: 64px; width: 64px;"></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><img class="img-view" src="img/produtos/mouse/adder/adderP1.png"></a>
+<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><img class="img-show" src='<c:url value="${detalhe.imgV2}"/>' style="height: 64px; width: 64px;"></a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><img class="img-view" src="img/produtos/mouse/adder/adderP1.png"></a>
+<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><img class="img-show" src='<c:url value="${detalhe.imgV3}"/>' style="height: 64px; width: 64px;"></a>
 </li>
 </ul>
 </div>
@@ -119,7 +119,6 @@
   <p><c:out value="${detalhe.descricao}"/></p>
   <span class="mb-2" id="span-prec">R$ <c:out value="${detalhe.valorProduto}"/></span></br>
   <span class="mb-2" id="span-frete"><i class="fas fa-truck"></i> Frete grátis para todo o país</span></br>
-  <span class="mb-2"><i class="fas fa-reply"></i> Devolução grátis por 0 dias </span><br/>
 
 
 <!--  <div class="input-group number-spinner mt-2 mb-3">
@@ -133,7 +132,6 @@
   </div>-->
 
   <a href="add-produto-carrinho?produto=${detalhe.nomeProduto}"class="btn btn-sn mb-1 but-compra">Comprar</a>
-  <a  href="add-produto-carrinho?produto=${detalhe.nomeProduto}" class="btn btn-sn mb-1 but-compra">Adicionar ao Carrinho</a>
 
 
 </div>
@@ -193,24 +191,24 @@
         <div class="row mb-3">
             <div class="col-md-4">
                 <div class="card">
-                    <a class="lightbox" href="img/produtos/mouse/adder/adderF1.jpeg">
-                    <img src="img/produtos/mouse/adder/adderF1.jpeg" alt="Park" class="card-img-top">
+                    <a class="lightbox" href='<c:url value="${detalhe.imgC1}"/>'>
+                    <img src='<c:url value="${detalhe.imgC1}"/>' alt="MOUSE RAZER" class="card-img-top">
                     </a>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="card">
-                    <a class="lightbox" href="img/produtos/mouse/adder/adderF1.jpg">
-                    <img src="img/produtos/mouse/adder/adderF1.jpg" alt="Park" class="card-img-top">
+                    <a class="lightbox" href='<c:url value="${detalhe.imgC2}"/>'>
+                    <img src='<c:url value="${detalhe.imgC2}"/>' alt="Park" class="card-img-top">
                     </a>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="card">
-                    <a class="lightbox" href="img/produtos/mouse/adder/adderF2.jpg">
-                    <img src="img/produtos/mouse/adder/adderF2.jpg" alt="Park" class="card-img-top">
+                    <a class="lightbox" href='<c:url value="${detalhe.imgC3}"/>' />
+                    <img src='<c:url value="${detalhe.imgC3}"/>' alt="Park" class="card-img-top">
                     </a>
                 </div>
             </div>
