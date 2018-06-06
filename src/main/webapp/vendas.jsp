@@ -102,7 +102,7 @@
           <b>${produto.id}</b>
         </div>
         <div class="col-md-3">
-          <h3>Valor</h3>
+          <h3>Total da Compra</h3>
           <b>R$ ${produto.valor}</b>
         </div>
         <div class="col-md-3">
@@ -111,7 +111,7 @@
         </div>
         <div class="col-md-3">
           <h3>Status Pedido</h3>
-          <b>${produto.status}</b>
+          <b style="text-transform: uppercase;">${produto.status}</b>
         </div>
         </div>
 
@@ -133,11 +133,11 @@
           <b>${produto2.qtde}</b>
         </div>
         <div class="col-md-3">
-          <h3>Preço unitario</h3>
+          <h3>Preço unitário</h3>
           <b>${produto2.preco}</b>
         </div>
         <div class="col-md-3">
-          <h3>Valor</h3>
+          <h3>Total</h3>
           <b>${produto2.valor}</b>
         </div>
         </div>
