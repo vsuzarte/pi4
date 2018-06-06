@@ -90,7 +90,7 @@
 
   <div class="row">
 
-    <h1>Última compra</h1>
+    <h1>Histórico de compras</h1>
 
     <div class="col-12">
     <div class="card card-compras">
@@ -103,7 +103,7 @@
         </div>
         <div class="col-md-3">
           <h3>Pagamento</h3>
-          <b>${produto.cartao}</b>
+          <b>Cartão: ${produto.cartao}</b>
         </div>
         <div class="col-md-3">
           <h3>Status Pedido</h3>
