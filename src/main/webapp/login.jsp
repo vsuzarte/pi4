@@ -26,7 +26,7 @@
 <body class="text-center">
 
   <form action="${pageContext.request.contextPath}/login" method="post" class="form-signin">
-        <img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72">
+      <a href="index.jsp"><img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72"></a>
         <h1 class="h3 mb-3 font-weight-normal">Entrar</h1>
         <label for="inputEmail" class="sr-only">Email</label>
         <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>

@@ -26,7 +26,7 @@
 
 
   <form action="cadastro-cliente" method="post" class="form-signin">
-        <img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72">
+      <a href="index.jsp"><img class="mb-4" src="img/headshot.jpg" alt="" width="72" height="72"></a>
         <h1 class="h3 mb-3 font-weight-normal">Criar Conta</h1>
 
         <label for="inputNome" class="sr-only">Nome</label>
