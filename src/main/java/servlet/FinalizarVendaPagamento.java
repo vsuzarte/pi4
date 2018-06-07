@@ -76,6 +76,7 @@ public class FinalizarVendaPagamento extends HttpServlet {
             
             carrinho = null;
             sessao.setAttribute("carrinho", carrinho);
+            sessao.setAttribute("totalCarrinho", 0);
              RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/mostrar-compras");
              dispatcher.forward(request, response);
