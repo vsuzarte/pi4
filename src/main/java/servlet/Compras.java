@@ -46,7 +46,7 @@ public class Compras extends HttpServlet {
             sessao.setAttribute("listaCompras", listaCompras);
               response.sendRedirect(request.getContextPath() + "/vendas.jsp");
         } catch (Exception ex) {
-            Logger.getLogger(Compras.class.getName()).log(Level.SEVERE, null, ex);
+
         }
  
      

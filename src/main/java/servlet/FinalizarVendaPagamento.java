@@ -37,6 +37,9 @@ public class FinalizarVendaPagamento extends HttpServlet {
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
         String cartao = request.getParameter("cartao");
+       
+  
+        
         Cliente cliente = (Cliente) sessao.getAttribute("cliente");
         if(sessao.getAttribute("cliente") == null){
              RequestDispatcher dispatcher

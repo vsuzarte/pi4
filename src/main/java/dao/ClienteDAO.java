@@ -263,6 +263,8 @@ public class ClienteDAO {
                 venda.setListaProdutos(listarItemVenda(venda));
 
                 listaVendas.add(venda);
+                
+           
 
             }
 
@@ -279,7 +281,19 @@ public class ClienteDAO {
 
         }
 
-        return listaVendas;
+        
+             List<Venda> troca = new ArrayList<Venda>();
+             if(listaVendas!=null){
+                int j = listaVendas.size();
+ 
+                for(int i = 0; i < listaVendas.size() ;i++ ){
+                    troca.add(listaVendas.get(j - 1));
+                    j--;
+                   
+                }
+             }
+                
+        return troca;
     }
 
     public static List<ItemVenda> listarItemVenda(Venda venda) throws SQLException, Exception {

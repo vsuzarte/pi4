@@ -89,7 +89,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="cc-number">Número do cartão*</label>
-                <input  name = "cartao" type="text" class="form-control" id="cc-number" placeholder="" required>
+                <input  name = "cartao" type="number" class="form-control" id="cc-number" placeholder="" required>
                 <div class="invalid-feedback">
                   Preencha o número no cartão
                 </div>
@@ -98,14 +98,14 @@
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Data de vencimento*</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="MM/AA" required>
+                <input type="number" class="form-control" id="cc-expiration" placeholder="MM/AA" required>
                 <div class="invalid-feedback">
                   Preencha a data de vencimento
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">CVV*</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="Código segurança" required>
+                <input type="number" class="form-control" id="cc-cvv" placeholder="Código segurança" required>
                 <div class="invalid-feedback">
                   Preencha o código de segurança
                 </div>
