@@ -16,11 +16,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <link rel="stylesheet" type="text/css" href="css/navBlack.css">
+        <link rel="stylesheet" type="text/css" href="css/endereco.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     </head>
     <body>
-    <div class="container-fluid"> <!-- INICIO CONTAINER HEADER -->
+        <div class="container-fluid"> <!-- INICIO CONTAINER HEADER -->
             <div class="row">
                 <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -38,7 +39,7 @@
                                     <a class="nav-link" href="consultarVenda.jsp">Consultar Venda</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="consultar-mensagens-back">Consultar Mensagens</a>
+                                    <a class="nav-link" href="consultar-perguntas-back">Consultar Mensagens</a>
                                 </li>
                             </ul>
 
@@ -60,48 +61,36 @@
 
         <div class="container">
             <div class="row mt-2 mb-2">
-                <form action="consultar-venda-back" method="post" class="form-inline text-center">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn but-compra my-2 my-sm-0" type="submit">Procurar</button>
-                </form>
+                
 
             </div>
             <div class="row">
-               
-                <table class="table table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">Código da Venda</th>
-                            <th scope="col">Cliente</th>
-                            <th scope="col">Valor da venda</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                         <c:forEach items="${listaVendaBack}" var="venda" >
-                        <tr>
-                            <th name ="id" value="${venda.id}">${venda.id}</th>
-                            <td>${venda.idCliente}</td>
-                            <td>${venda.valor}</td>
-                            <td>
-                                <form action ="alterar-status-venda?id=${venda.id} " method="post" >
-                                    <select name ="status" >
-                                    <option value="${venda.status}">${venda.status}</option>
-                                    <option name="status" value="pendente" >Pendente</option>
-                                    <option name="status" value="aprovado">Aprovado</option>
-                                    <option name="status" value="encaminhado">Encaminhando</option>
-                                    <option name="status" value="entregue">Entregue</option>
-                                </select>
-                                    <button class="but-compra" type="submit">Alterar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        </c:forEach> 
-                    </tbody>
-                     
-                </table>
-                         
+<c:forEach items="${listaRespostas}" var="mensagem">
+        
+    <div class="container mt-5 mb-5">
+        <form action="responder-mensagem" method="post">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">Assunto: ${mensagem.assunto} </div><div class="col-6">Status:${mensagem.status}</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-muted">Pergunta:</h3>
+                    <p>${mensagem.mensagem}</p>
+
+                </div>
+                <div class="card-body" id="resposta">
+                    <h3 class="text-muted">Resposta:</h3>
+                    <textarea name="resposta" type="text" maxlength="255" max="255" class="form-control" id="ass" placeholder="Preencha a resposta."></textarea>
+                    <button type="submit" class="btn but-compra mt-2 ml-3">Enviar</button>
+                    <input type="text" name="idMensagem" value="${mensagem.idMensagem}" style="margin-left: -9999px;"/>
+                </div>
+            </div>
+        </form>
+        </div>
+   
+</c:forEach>
             </div>
         </div>
 

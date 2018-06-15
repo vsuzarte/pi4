@@ -179,7 +179,7 @@ public class MensagemDAO {
                   int idMensagem = result.getInt("idMensagem");
               
                int idCliente = result.getInt("idCliente");
-                String mensagem = result.getString("cartao");
+                String mensagem = result.getString("mensagem");
                 String status = result.getString("status");
                 String resposta = result.getString("resposta");
                 String assunto = result.getString("assunto");
@@ -206,8 +206,19 @@ public class MensagemDAO {
             }
 
         }
+        
+         List<Mensagem> troca = new ArrayList<Mensagem>();
+             if(listaMensagens!=null){
+                int j = listaMensagens.size();
+ 
+                for(int i = 0; i < listaMensagens.size() ;i++ ){
+                    troca.add(listaMensagens.get(j - 1));
+                    j--;
+                   
+                }
+             }
 
-        return listaMensagens;
+        return troca;
     }
         
      public static void responderMensagem(int idMensagem, String resposta) throws SQLException, Exception {

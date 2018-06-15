@@ -72,16 +72,19 @@ public class ResponderMensagem extends HttpServlet {
 
             
             String resposta = request.getParameter("resposta");
-            int idCliente = Integer.parseInt(request.getParameter("idCliente"));
+            
+            String id = request.getParameter("idMensagem");
+            
+            int idMensagem = Integer.parseInt(request.getParameter("idMensagem"));
             try {
-                MensagemDAO.responderMensagem(idCliente,resposta);
+                MensagemDAO.responderMensagem(idMensagem,resposta);
             } catch (Exception e) {
                 e.printStackTrace();
             }
            
             request.setAttribute("mensagem", "Cadastrado ! ");
             RequestDispatcher dispatcher
-                    = request.getRequestDispatcher("/consultar-mensagens-back.jsp");
+                    = request.getRequestDispatcher("/consultar-mensagens-back");
             dispatcher.forward(request, response);
         }
 

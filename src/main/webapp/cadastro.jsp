@@ -25,39 +25,42 @@
     <body> 
 
    <div class="container-fluid"> <!-- INICIO CONTAINER HEADER -->
-      <div class="row">
-        <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="homeBack.jsp">HeadShot<img id="logo" src="img/headshot.jpg" alt="imagem logo do site">com</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="cadastro.jsp" class="nav-link" >Cadastro Produto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="consultar-venda-back">Consultar Venda</a>
-              </li>
-            </ul>
-            
-            <div class="registro">
-            <span class="navbar-text">
-              <p> <c:out value="${usuario.nomeUsuario}" /> </p>
-            </span>
-            <span class="navbar-text">
-              <a class="btn btn-sm btn-outline-secondary" href="logout-back">Sair</a>
-            </span>
-          </div>
-              
-          </div>
-        </nav>
-      </header>
+            <div class="row">
+                <header class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <a class="navbar-brand" href="homeBack.jsp">HeadShot<img id="logo" src="img/headshot.jpg" alt="imagem logo do site">com</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="cadastro.jsp" class="nav-link" >Cadastro Produto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="consultarVenda.jsp">Consultar Venda</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="consultar-mensagens-back">Consultar Mensagens</a>
+                                </li>
+                            </ul>
 
-    </div>
-    </div> <!-- FIM CONTAINER HEADER -->
+                            <div class="registro">
+                                <span class="navbar-text">
+                                    <p> Vitor </p>
+                                </span>
+                                <span class="navbar-text">
+                                    <a class="btn btn-sm btn-outline-secondary" href="logout-back">Sair</a>
+                                </span>
+                            </div>
+
+                        </div>                    
+                    </nav>
+                </header>
+
+            </div>
+        </div> <!-- FIM CONTAINER HEADER -->
         
         <div class="container text-center">
 
