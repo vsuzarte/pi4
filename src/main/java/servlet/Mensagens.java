@@ -46,7 +46,7 @@ public class Mensagens extends HttpServlet {
         try {
             List<Mensagem> listaMensagens = MensagemDAO.consultarMensagens(cliente.getIdCliente());
             sessao.setAttribute("listaMensagens", listaMensagens);
-              response.sendRedirect(request.getContextPath() + "/mensagens.jsp");
+              response.sendRedirect(request.getContextPath() + "/mensagem.jsp");
         } catch (Exception ex) {
 
         }
@@ -57,7 +57,20 @@ public class Mensagens extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-HttpSession sessao = request.getSession();
+
+           HttpSession sessao = request.getSession();
+           Cliente cliente = (Cliente) sessao.getAttribute("cliente");
+         if(cliente == null){
+             response.sendRedirect(request.getContextPath() + "/login.jsp");
+         }
+           
+        try {
+            List<Mensagem> listaMensagens = MensagemDAO.consultarMensagens(cliente.getIdCliente());
+            sessao.setAttribute("listaMensagens", listaMensagens);
+              response.sendRedirect(request.getContextPath() + "/mensagem.jsp");
+        } catch (Exception ex) {
+
+        }
            
      
 

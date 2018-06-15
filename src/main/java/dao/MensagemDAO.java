@@ -29,7 +29,7 @@ public class MensagemDAO {
         
         Connection conn = null;
 
-        String sql = "INSERT INTO Mensagem(idCliente, Mensagem, Assunto, Status)"
+        String sql = "INSERT INTO Mensagens(idCliente, Mensagem, Assunto, Status)"
                 + "VALUES (?, ?, ?, ?)";
 
         PreparedStatement stmt = null;
@@ -75,7 +75,7 @@ public class MensagemDAO {
     }
        public static List<Mensagem> consultarMensagens(int idCliente) throws SQLException, Exception {
 
-        String sql = "SELECT * FROM mensagem WHERE IDCLIENTE=?";
+        String sql = "SELECT * FROM mensagens WHERE IDCLIENTE=?";
 
         List<Mensagem> listaMensagens = null;
 
@@ -102,9 +102,11 @@ public class MensagemDAO {
                
 
                 int idMensagem = result.getInt("idMensagem");
+             
+                 String mensagem = result.getString("mensagem");
               
+                   
                
-                String mensagem = result.getString("cartao");
                 String status = result.getString("status");
                 String resposta = result.getString("resposta");
                 String assunto = result.getString("assunto");
@@ -132,12 +134,23 @@ public class MensagemDAO {
             }
 
         }
+        
+        List<Mensagem> troca = new ArrayList<Mensagem>();
+             if(listaMensagens!=null){
+                int j = listaMensagens.size();
+ 
+                for(int i = 0; i < listaMensagens.size() ;i++ ){
+                    troca.add(listaMensagens.get(j - 1));
+                    j--;
+                   
+                }
+             }
 
-        return listaMensagens;
+        return troca;
     }
         public static List<Mensagem> listarMensagens() throws SQLException, Exception {
 
-        String sql = "SELECT * FROM Mensagem WHERE Status = ?";
+        String sql = "SELECT * FROM Mensagens WHERE Status = ?";
 
         List<Mensagem> listaMensagens = null;
 
@@ -202,7 +215,7 @@ public class MensagemDAO {
         //Monta a string com o comando SQL para atualizar dados na tabela cliente
         //ultilizando os dados do cliente passado por parâmetro.
         //A String ira ser ultilizada pelo prepared statement
-        String sql = "UPDATE Mensagem SET  Status=?, Resposta=? "
+        String sql = "UPDATE Mensagens SET  Status=?, Resposta=? "
                 + "WHERE (idMensagem=?)";
 
         //connection para abertura e fechamento.

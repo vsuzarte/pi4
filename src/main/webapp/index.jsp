@@ -62,6 +62,12 @@
             </span>
                 </c:if>
                 
+                 <c:if test = "${sessionScope.cliente != null}">
+            <span class="navbar-text">
+              <a class="btn btn-sm btn-outline-secondary" href="consultar-mensagens">Mensagens <i class="fas fa-user"></i></a>
+            </span>
+                </c:if>
+                
                    <c:if test = "${sessionScope.cliente != null}">
                        <p class="btn btn-sm btn-outline-secondary">Bem vindo ${cliente.nomeCliente} <i class="fas fa-user"></i></p>
             <span class="navbar-text">

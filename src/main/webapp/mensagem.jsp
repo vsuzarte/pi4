@@ -62,6 +62,11 @@
                                         <a class="btn btn-sm btn-outline-secondary" href="login.jsp">Entre <i class="fas fa-user"></i></a>
                                     </span>
                                 </c:if>
+                                <c:if test = "${sessionScope.cliente != null}">
+            <span class="navbar-text">
+              <a class="btn btn-sm btn-outline-secondary" href="consultar-mensagens">Mensagens <i class="fas fa-user"></i></a>
+            </span>
+                </c:if>
 
                                 <c:if test = "${sessionScope.cliente != null}">
                                     <p class="btn btn-sm btn-outline-secondary">Bem vindo ${cliente.nomeCliente} <i class="fas fa-user"></i></p>
@@ -96,6 +101,7 @@
             </div>
 
             <div  class="row">
+                <form action="mandar-mensagem" method="post" class="form-inline">
                 <div class="col-4 text-center">
 
                     <div class="mb-3">
@@ -105,19 +111,22 @@
 
                     <div class="mb-3"
                          <label for="ass">Assunto*</label>
-                        <input name="ass" type="text" class="form-control" id="ass" placeholder="Preencha o assunto da mensagem" required>
+                        <input name="assunto" type="text" class="form-control" id="ass" placeholder="Preencha o assunto da mensagem" required>
                     </div>
 
                 </div>
                 <div class="col-8 text-center">
                     <div>
                         <label for="exampleFormControlTextarea1">Digite sua Mensagem</label>
-                        <textarea class="form-area" id="exampleFormControlTextarea1" rows="5"></textarea>
-                        <button class="btn btn-primary but-compra mr-0" type="submit">Eviar Mensagem</button>
+                        <textarea name ="mensagem" class="form-area" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        
+                         
+                        <button class="btn btn-primary but-compra mr-0" type="submit">Enviar Mensagem</button>
+                        
                     </div>
 
                 </div>
-
+ </form>
             </div>
 
 
@@ -126,26 +135,27 @@
         </div>
 
 
-
+      <c:forEach items="${listaMensagens}" var="mensagem">
         <div class="container mt-5 mb-5">
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-6">Assunto: </div><div class="col-6">Status:</div>
+                        <div class="col-6">Assunto: ${mensagem.assunto}</div><div class="col-6">Status: ${mensagem.status} </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <h3 class="text-muted">Pergunta:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <p>${mensagem.mensagem}</p>
 
                 </div>
                 <div class="card-body">
                     <h3 class="text-muted">Resposta:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <p> ${mensagem.resposta}</p>
 
                 </div>
             </div>
         </div>
+          </c:forEach>
 
 
 

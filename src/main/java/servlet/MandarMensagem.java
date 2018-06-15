@@ -84,7 +84,7 @@ public class MandarMensagem extends HttpServlet {
             sessao.setAttribute("cliente", cliente);
             request.setAttribute("mensagem", "Cadastrado ! ");
             RequestDispatcher dispatcher
-                    = request.getRequestDispatcher("/consultar-mensagem.jsp");
+                    = request.getRequestDispatcher("/consultar-mensagens");
             dispatcher.forward(request, response);
         }
 

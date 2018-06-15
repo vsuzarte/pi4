@@ -31,7 +31,7 @@
        
 );
 
-CREATE TABLE Mensagem(
+CREATE TABLE Mensagens(
 idMensagem INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
 idCliente INTEGER NOT NULL,
 mensagem VARCHAR(255) NOT NULL,
@@ -121,3 +121,4 @@ INSERT INTO PRODUTO(NOMEPRODUTO,DESCRICAO,VALORPRODUTO,C1,C2,C3,C4,C5,C6,CATEGOR
 INSERT INTO PRODUTO(NOMEPRODUTO,DESCRICAO,VALORPRODUTO,C1,C2,C3,C4,C5,C6,CATEGORIA,IMG,IMGV1,IMGV2,IMGV3,IMGC1,IMGC2,IMGC3,DISPONIVEL) VALUES ('ManOWar ','Mergulhe no jogo com total liberdade sem fio, com o headset de jogos para PC sem fio Razer',630,'Drivers: 50 mm, com ímãs de neodímio','Tipo de conexão: Transceptor USB sem fio','Alcance sem fio: 12 m / 40 pés','Freqüência sem fio: 2,4 Ghz','Duração da bateria: até 14 horas com iluminação Razer Chroma ', '20 horas sem iluminação Razer Chroma', 'Headset','img/man/img.png','img/man/imgV1.png','img/man/imgV2.png','img/man/imgV3.png','img/man/imgC1.jpg','img/man/imgC2.jpg','img/man/imgC1.jpg',TRUE );
 
 
+insert into mensagens (idCliente, mensagem, assunto, resposta, status) values (1,'mensagem teste', 'teste', 'testado', 'respondido')
