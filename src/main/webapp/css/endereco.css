@@ -8,10 +8,27 @@ body {
     background-color: black;
 }
 
+div .form-group{
+    background: red;
+}
+
+
  .form-control {
-  color: white;
+        color: white;
 	background: transparent;
 	border-color: white;
+}
+
+.form-control:hover {
+        color: white;
+	background: transparent;
+	border-color: blue;
+}
+
+.form-control:focus {
+        color: white;
+	background: transparent;
+	border-color: blue;
 }
 
 .btn{
@@ -78,4 +95,20 @@ div .card-body{
 
 p{
 	font-size: 15px;
+}
+
+.form{
+    width: 90%;
+    background: transparent;
+    border-radius: 5px;
+    color: white;
+    height: 2.5rem;
+}
+
+.form-area{
+    width: 90%;
+    background: transparent;
+    border-radius: 5px;
+    color: white;
+    height: 7.5rem;
 }
